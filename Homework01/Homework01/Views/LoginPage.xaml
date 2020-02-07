@@ -3,26 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             mc:Ignorable="d" NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
              x:Class="Homework01.Views.LoginPage">
     <ContentPage.Content>
      
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
-                   Style="{StaticResource LabelStyle}" Text="Login" FontAttributes="Bold"/>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}"
+                   Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="40"  Text="Login" Margin="20,0"/>
 
-            <Label Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
-                   Style="{StaticResource LabelStyle}" Text="Sign Up" FontAttributes="Bold"/>
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                   Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Sign Up" FontAttributes="Bold" FontSize="20" Margin="20,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding .}"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+            <StackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,10,0,0">
+
+                <Image Source="ic_user" HeightRequest="120" WidthRequest="120"></Image>
+
+                <Frame CornerRadius="5" Margin="0,10,0,5" Padding="0,0" HasShadow="True">
+                    <Entry Placeholder=" Username or email address "  PlaceholderColor="Gray" FontFamily="{StaticResource PoppinsFont}"
+                           HorizontalTextAlignment="Start" Text="{Binding User}"  FontSize="19"/>
+                </Frame>
+
+                <Frame CornerRadius="5" Margin="0,5" Padding="0,0" HasShadow="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="9*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Entry Grid.Column="0" Grid.ColumnSpan="2" Placeholder=" Password"  PlaceholderColor="Gray" FontSize="19" 
+                               HorizontalTextAlignment="Start" Text="{Binding User}"  FontFamily="{StaticResource PoppinsFont}" />
+                        <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="10,0,15,0"/>
+                    </Grid>
+                </Frame>
+                <Frame BackgroundColor="WhiteSmoke" Margin="10,20" Padding="0,0" HasShadow="True" CornerRadius="20">
+                        <Button BackgroundColor="White" BorderColor="DarkGray" TextColor="#999abb" 
+                                Text="Log In"  FontAttributes="Bold" FontSize="20"></Button>
+                </Frame>
+            </StackLayout>
 
         </Grid>
     </ContentPage.Content>
