@@ -7,7 +7,7 @@
     <NavigationPage.TitleView>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
             <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontFamily="{StaticResource PoppinsBoldFont}"
-                   Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="24"  Text="{Binding Title}" Margin="20,-5,20,0"/>
+                   Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="20"  Text="{Binding Title}" Margin="20,-5,20,0"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
@@ -28,10 +28,10 @@
              BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
           <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
               <Image Source="ic_beer"/>
-              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Bars y Hotels"
-                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,0,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="Bars &#x0026; Hotels"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontSize="16" Margin="0,0,0,-10"  />
               <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="42 Place"
-                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="13" />
           </StackLayout>
       </Frame>
 
@@ -39,10 +39,10 @@
              BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
           <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
               <Image Source="ic_dining"/>
-              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Fine Dining"
-                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,-5,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="Fine Dining"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontSize="16" Margin="0,-5,0,-10"  />
               <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="15 Place"
-                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="13" />
           </StackLayout>
       </Frame>
 
@@ -50,10 +50,10 @@
              BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
           <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
               <Image Source="ic_cafes"/>
-              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Cafes"
-                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,0,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="Cafes"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontSize="16" Margin="0,0,0,-10"  />
               <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="28 Place"
-                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="13" />
           </StackLayout>
       </Frame>
 
@@ -61,10 +61,10 @@
              BackgroundColor="#ffcc2a" BorderColor="LightGray" CornerRadius="5">
           <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
               <Image Source="ic_nearby"/>
-              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Nearby"
-                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,0,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="Nearby"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontSize="16" Margin="0,0,0,-10"  />
               <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="34 Place"
-                     Style="{StaticResource LabelStyle}" TextColor="Black"  FontAttributes="Bold" FontSize="14" />
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontSize="13" />
           </StackLayout>
       </Frame>
 
@@ -72,10 +72,10 @@
              BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
           <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
               <Image Source="ic_food"/>
-              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Fast Foods"
-                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,0,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="Fast Foods"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontSize="16" Margin="0,0,0,-10"  />
               <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="29 Place"
-                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="13" />
           </StackLayout>
       </Frame>
 
@@ -83,10 +83,10 @@
              BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
           <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
               <Image Source="ic_pizza"/>
-              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Featured Foods"
-                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="15" Margin="0,-5,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="Featured Foods"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontSize="15" Margin="0,-5,0,-10"  />
               <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="21 Place"
-                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="13" />
           </StackLayout>
       </Frame>
 
