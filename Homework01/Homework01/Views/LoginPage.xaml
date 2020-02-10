@@ -7,71 +7,76 @@
              BackgroundColor="White"
              x:Class="Homework01.Views.LoginPage">
     <ContentPage.Content>
-     
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.1*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="0.1*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="8*"></RowDefinition>
-            </Grid.RowDefinitions>
+        <ScrollView>
 
-            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}"
-                   Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="32"  Text="Login" Margin="20,0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="8*"></RowDefinition>
+                </Grid.RowDefinitions>
 
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}"
-                   Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Sign Up" FontAttributes="Bold" FontSize="16" Margin="20,0">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SignupCommand}"></TapGestureRecognizer>
-                </Label.GestureRecognizers>
-            </Label>
-            <StackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start">
+                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}"
+                       Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="32"  Text="Login" Margin="20,0"/>
 
-                <Image Source="ic_user" HeightRequest="110" WidthRequest="110"></Image>
+                <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                       Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Sign Up" FontAttributes="Bold" FontSize="18" Margin="20,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SignupCommand}"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
 
-                <Frame CornerRadius="5" Margin="0,15,0,5" Padding="0,0" HasShadow="True">
-                    <Entry Placeholder=" Username or email address "  PlaceholderColor="Gray" FontFamily="{StaticResource PoppinsFont}"
-                           HorizontalTextAlignment="Start" Text="{Binding User}"  FontSize="19"/>
-                </Frame>
+                <StackLayout Grid.Column="1" Grid.Row="1"
+                             HorizontalOptions="Center" VerticalOptions="Start">
 
-                <Frame CornerRadius="5" Margin="0,5" Padding="0,0" HasShadow="True">
-                    <Grid>
+                    <Image Source="ic_user" HeightRequest="110" WidthRequest="110" Margin="0,0,0,15"></Image>
+
+                    <Frame CornerRadius="5" Margin="0,15,0,5" Padding="0,0" HasShadow="True">
+                        <Entry Placeholder=" Username or email address "  PlaceholderColor="Gray" FontFamily="{StaticResource PoppinsFont}"
+                               HorizontalTextAlignment="Start" Text="{Binding User}"  FontSize="19"/>
+                    </Frame>
+
+                    <Frame CornerRadius="5" Margin="0,5" Padding="0,0" HasShadow="True">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Entry Grid.Column="0" Grid.ColumnSpan="2" Placeholder=" Password"  PlaceholderColor="Gray" FontSize="19" IsPassword="True"
+                                   HorizontalTextAlignment="Start" Text="{Binding Password}" FontFamily="{StaticResource PoppinsFont}" />
+                            <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="10,0,15,0"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame BackgroundColor="FloralWhite" Margin="20,20" Padding="0,0" HasShadow="True" CornerRadius="20" BorderColor="DarkGray">
+                        <Button BackgroundColor="White" BorderColor="DarkGray" TextColor="#999abb" 
+                                Text="&#x2714;  Log In"  FontAttributes="Bold" FontSize="22"></Button>
+                    </Frame>
+
+                    <Label Margin="0,30,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontFamily="{StaticResource PoppinsBoldFont}"
+                           Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Login with" FontSize="16" />
+
+                    <Grid HeightRequest="50" ColumnSpacing="10" Margin="25,10">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="9*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
                             <ColumnDefinition Width="2*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Entry Grid.Column="0" Grid.ColumnSpan="2" Placeholder=" Password"  PlaceholderColor="Gray" FontSize="19" 
-                               HorizontalTextAlignment="Start" Text="{Binding Password}"  FontFamily="{StaticResource PoppinsFont}" />
-                        <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="10,0,15,0"/>
+                        <Image Grid.Column="0" Source="ic_google" />
+                        <Image Grid.Column="1" Source="ic_github" />
+                        <Image Grid.Column="2" Source="ic_twitter" />
+                        <Image Grid.Column="3" Source="ic_facebook" />
                     </Grid>
-                </Frame>
-                <Frame BackgroundColor="FloralWhite" Margin="20,20" Padding="0,0" HasShadow="True" CornerRadius="20" BorderColor="DarkGray">
-                        <Button BackgroundColor="White" BorderColor="DarkGray" TextColor="#999abb" 
-                                Text="&#x2714;  Log In"  FontAttributes="Bold" FontSize="22"></Button>
-                </Frame>
+                </StackLayout>
+            </Grid>
 
-                <Label Margin="0,30,0,0" HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontFamily="{StaticResource PoppinsBoldFont}"
-                       Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Login with" FontSize="15" />
-
-                <Grid HeightRequest="50" ColumnSpacing="10" Margin="25,10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <Image Grid.Column="0" Source="ic_google" />
-                    <Image Grid.Column="1" Source="ic_github" />
-                    <Image Grid.Column="2" Source="ic_twitter" />
-                    <Image Grid.Column="3" Source="ic_facebook" />
-                </Grid>
-            </StackLayout>
-
-        </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

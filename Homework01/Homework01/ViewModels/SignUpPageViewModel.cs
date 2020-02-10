@@ -12,14 +12,13 @@ namespace Homework01.ViewModels
 
         public DelegateCommand LoginCommand { get; set; }
 
-
         public SignUpPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
 
             LoginCommand = new DelegateCommand(async () =>
             {
-                await NavigationService.NavigateAsync(new Uri($"/NavigationPage/LoginPage", UriKind.Absolute));
+                await NavigationService.NavigateAsync(new Uri($"/{Config.Login}", UriKind.Relative));
             });
         }
     }
