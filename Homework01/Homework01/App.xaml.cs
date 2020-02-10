@@ -29,7 +29,9 @@ namespace Homework01
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
+
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<SignUpPage, SignUpPageViewModel>();
         }
     }
 }

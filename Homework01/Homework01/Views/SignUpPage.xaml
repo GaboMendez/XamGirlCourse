@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" NavigationPage.HasNavigationBar="False"
+             x:Class="Homework01.Views.SignUpPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}"
+                   Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="40"  Text="Sign Up" Margin="20,0"/>
+
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                   Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Login" FontAttributes="Bold" FontSize="20" Margin="20,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LoginCommand}"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+            <StackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start">
+
+                <Image Source="ic_camara" HeightRequest="120" WidthRequest="120"></Image>
+
+                <Frame CornerRadius="5" Margin="0,5,0,5" Padding="0,0" HasShadow="True">
+                    <Entry Placeholder=" Email address "  PlaceholderColor="Gray" FontFamily="{StaticResource PoppinsFont}"
+                           HorizontalTextAlignment="Start" Text="{Binding User}"  FontSize="19"/>
+                </Frame>
+
+                <Frame CornerRadius="5" Margin="0,5,0,5" Padding="0,0" HasShadow="True">
+                    <Entry Placeholder=" Username "  PlaceholderColor="Gray" FontFamily="{StaticResource PoppinsFont}"
+                           HorizontalTextAlignment="Start" Text="{Binding User}"  FontSize="19"/>
+                </Frame>
+
+                <Frame CornerRadius="5" Margin="0,5" Padding="0,0" HasShadow="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="9*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Entry Grid.Column="0" Grid.ColumnSpan="2" Placeholder=" Password"  PlaceholderColor="Gray" FontSize="19" 
+                               HorizontalTextAlignment="Start" Text="{Binding Password}"  FontFamily="{StaticResource PoppinsFont}" />
+                        <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="10,0,15,0"/>
+                    </Grid>
+                </Frame>
+
+                <Frame CornerRadius="5" Margin="0,5" Padding="0,0" HasShadow="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="9*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Entry Grid.Column="0" Grid.ColumnSpan="2" Placeholder=" Repeat Password"  PlaceholderColor="Gray" FontSize="19" 
+                               HorizontalTextAlignment="Start" Text="{Binding Password}"  FontFamily="{StaticResource PoppinsFont}" />
+                        <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="10,0,15,0"/>
+                    </Grid>
+                </Frame>
+
+
+                <Frame BackgroundColor="FloralWhite" Margin="20,20" Padding="0,0" HasShadow="True" CornerRadius="20" BorderColor="DarkGray">
+                    <Button BackgroundColor="White" BorderColor="DarkGray" TextColor="#999abb" 
+                                Text="&#x2714;  Sign Up"  FontAttributes="Bold" FontSize="22"></Button>
+                </Frame>
+
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontFamily="{StaticResource PoppinsBoldFont}"
+                       Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Terms of Service" FontSize="15" />
+
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
