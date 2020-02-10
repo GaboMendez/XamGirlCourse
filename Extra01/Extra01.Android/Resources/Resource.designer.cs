@@ -9694,7 +9694,40 @@ namespace Extra01.Droid
 		{
 			
 			// aapt resource value: 0x7F0C0000
-			public const int ic_launcher = 2131492864;
+			public const int ic_award = 2131492864;
+			
+			// aapt resource value: 0x7F0C0001
+			public const int ic_beer = 2131492865;
+			
+			// aapt resource value: 0x7F0C0002
+			public const int ic_bookmark = 2131492866;
+			
+			// aapt resource value: 0x7F0C0003
+			public const int ic_cafes = 2131492867;
+			
+			// aapt resource value: 0x7F0C0004
+			public const int ic_dining = 2131492868;
+			
+			// aapt resource value: 0x7F0C0005
+			public const int ic_food = 2131492869;
+			
+			// aapt resource value: 0x7F0C0006
+			public const int ic_home = 2131492870;
+			
+			// aapt resource value: 0x7F0C0007
+			public const int ic_launcher = 2131492871;
+			
+			// aapt resource value: 0x7F0C0008
+			public const int ic_nearby = 2131492872;
+			
+			// aapt resource value: 0x7F0C0009
+			public const int ic_pin = 2131492873;
+			
+			// aapt resource value: 0x7F0C000A
+			public const int ic_pizza = 2131492874;
+			
+			// aapt resource value: 0x7F0C000B
+			public const int ic_user = 2131492875;
 			
 			static Mipmap()
 			{
