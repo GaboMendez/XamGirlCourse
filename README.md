@@ -1,4 +1,13 @@
-# XamGirlCourse
-This repository contains all the practices of the XamGirl course with Charlin Agramonte. 
+# Extra 01 - Discovery Page
+Replicate the design of this page.
 
-* **Blog:** https://xamgirl.com/blog/
+<p aling="center">
+<img src="/ScreenShots/Design.JPG" width="30%" />
+ </p>
+ 
+## Screenshots
+<p aling="center">
+<img src="/ScreenShots/Screen01.JPG" width="30%" />
+ </p>
+ 
+ #### Made by: *Gabriel Mendez Reyes*
