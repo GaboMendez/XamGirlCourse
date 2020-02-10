@@ -19,10 +19,10 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}"
-                   Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="40"  Text="Sign Up" Margin="20,0"/>
+                   Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="32"  Text="Sign Up" Margin="20,0"/>
 
             <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}"
-                   Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Login" FontAttributes="Bold" FontSize="20" Margin="20,0">
+                   Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Login" FontAttributes="Bold" FontSize="16" Margin="20,0">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding LoginCommand}"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
@@ -70,7 +70,7 @@
 
                 <Frame BackgroundColor="FloralWhite" Margin="20,20" Padding="0,0" HasShadow="True" CornerRadius="20" BorderColor="DarkGray">
                     <Button BackgroundColor="White" BorderColor="DarkGray" TextColor="#999abb" 
-                                Text="&#x2714;  Sign Up"  FontAttributes="Bold" FontSize="22"></Button>
+                                Text="&#x2714;  Sign Up"  FontAttributes="Bold" FontSize="20"></Button>
                 </Frame>
 
                 <Label HorizontalTextAlignment="Center" VerticalTextAlignment="End" FontFamily="{StaticResource PoppinsBoldFont}"
