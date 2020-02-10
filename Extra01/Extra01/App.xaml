@@ -6,6 +6,35 @@
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBlackFont">
+                <On Platform="Android" Value="Poppins-Black.ttf#Poppins Black" />
+            </OnPlatform>
 
-	</Application.Resources>
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBoldFont">
+                <On Platform="Android" Value="Poppins-Bold.ttf#Poppins Bold" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsFont">
+                <On Platform="Android" Value="Poppins-Regular.ttf#Poppins" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsSemiBoldFont">
+                <On Platform="Android" Value="Poppins-SemiBold.ttf#Poppins SemiBold" />
+            </OnPlatform>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="White" />
+                <Setter Property="BarTextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsFont}" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
 </prism:PrismApplication>

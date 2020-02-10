@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d" BarBackgroundColor="White"
+            x:Class="Extra01.Views.MainTabbedPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:views="clr-namespace:Extra01.Views;assembly=Extra01"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="#373737"
+            android:TabbedPage.BarSelectedItemColor="#ffcc2a">
+
+    <NavigationPage Title="Home" IconImageSource="ic_home.png">
+        <x:Arguments>
+            <views:OtherPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Discovery" IconImageSource="ic_pin.png">
+        <x:Arguments>
+            <views:MainPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Bookmark" IconImageSource="ic_bookmark.png">
+        <x:Arguments>
+            <views:OtherPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Foodie" IconImageSource="ic_award.png">
+        <x:Arguments>
+            <views:OtherPage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Profile" IconImageSource="ic_user.png">
+        <x:Arguments>
+            <views:OtherPage />
+        </x:Arguments>
+    </NavigationPage>
+
+</TabbedPage>

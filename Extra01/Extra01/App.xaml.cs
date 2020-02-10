@@ -4,6 +4,7 @@ using Extra01.ViewModels;
 using Extra01.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Extra01
@@ -23,13 +24,17 @@ namespace Extra01
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync(new Uri($"/NavigationPage/MainTabbedPage?selectedTab=MainPage", UriKind.Absolute));
+            //await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<MainTabbedPage>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
+
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<OtherPage, OtherPageViewModel>();
         }
     }
 }

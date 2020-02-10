@@ -2,10 +2,94 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Extra01.Views.MainPage"
-             Title="{Binding Title}">
+             BackgroundColor="#f2f2f4">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontFamily="{StaticResource PoppinsBoldFont}"
+                   Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="24"  Text="{Binding Title}" Margin="20,-5,20,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+  <Grid VerticalOptions="Fill" HorizontalOptions="Fill"  
+        ColumnSpacing="25" RowSpacing="15" Margin="15,10"> 
+
+      <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="5*"></ColumnDefinition>
+          <ColumnDefinition Width="5*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+          <RowDefinition Height="4*"></RowDefinition>
+          <RowDefinition Height="4*"></RowDefinition>
+          <RowDefinition Height="4*"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Frame Grid.Row="0" Grid.Column="0" HasShadow="True"
+             BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
+          <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
+              <Image Source="ic_beer"/>
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Bars y Hotels"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,0,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="42 Place"
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+          </StackLayout>
+      </Frame>
+
+      <Frame Grid.Row="0" Grid.Column="1" HasShadow="True"
+             BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
+          <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
+              <Image Source="ic_dining"/>
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Fine Dining"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,-5,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="15 Place"
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+          </StackLayout>
+      </Frame>
+
+      <Frame Grid.Row="1" Grid.Column="0" HasShadow="True"
+             BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
+          <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
+              <Image Source="ic_cafes"/>
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Cafes"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,0,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="28 Place"
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+          </StackLayout>
+      </Frame>
+
+      <Frame Grid.Row="1" Grid.Column="1" HasShadow="True" Margin="0,-5,0,5"
+             BackgroundColor="#ffcc2a" BorderColor="LightGray" CornerRadius="5">
+          <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
+              <Image Source="ic_nearby"/>
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Nearby"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,0,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="34 Place"
+                     Style="{StaticResource LabelStyle}" TextColor="Black"  FontAttributes="Bold" FontSize="14" />
+          </StackLayout>
+      </Frame>
+
+      <Frame Grid.Row="2" Grid.Column="0" HasShadow="True"
+             BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
+          <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
+              <Image Source="ic_food"/>
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Fast Foods"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="16" Margin="0,0,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="29 Place"
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+          </StackLayout>
+      </Frame>
+
+      <Frame Grid.Row="2" Grid.Column="1" HasShadow="True"
+             BackgroundColor="White" BorderColor="LightGray" CornerRadius="5">
+          <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-5,-10">
+              <Image Source="ic_pizza"/>
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}" Text="Featured Foods"
+                     Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="15" Margin="0,-5,0,-10"  />
+              <Label HorizontalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}" Text="21 Place"
+                     Style="{StaticResource LabelStyle}" TextColor="DarkGray"  FontAttributes="Bold" FontSize="14" />
+          </StackLayout>
+      </Frame>
+
+    </Grid>
 
 </ContentPage>
