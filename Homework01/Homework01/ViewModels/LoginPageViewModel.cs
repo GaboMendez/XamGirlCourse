@@ -18,7 +18,7 @@ namespace Homework01.ViewModels
 
             SignupCommand = new DelegateCommand(async () =>
             {
-                await NavigationService.NavigateAsync(new Uri($"/{Config.Signup}", UriKind.Relative));
+                await NavigationService.NavigateAsync(new Uri($"/{Constants.Signup}", UriKind.Relative));
             });
         }
     }

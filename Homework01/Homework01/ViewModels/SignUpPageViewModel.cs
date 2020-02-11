@@ -18,7 +18,7 @@ namespace Homework01.ViewModels
 
             LoginCommand = new DelegateCommand(async () =>
             {
-                await NavigationService.NavigateAsync(new Uri($"/{Config.Login}", UriKind.Relative));
+                await NavigationService.NavigateAsync(new Uri($"/{Constants.Login}", UriKind.Relative));
             });
         }
     }

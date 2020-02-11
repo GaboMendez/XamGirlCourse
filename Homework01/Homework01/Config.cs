@@ -6,6 +6,11 @@ namespace Homework01
 {
     public static class Config
     {
+        
+    }
+
+    public static class Constants
+    {
         //Navigation
         public static string Navigation = "NavigationPage";
 
