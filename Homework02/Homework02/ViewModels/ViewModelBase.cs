@@ -13,8 +13,8 @@ namespace Homework02.ViewModels
     {
         protected INavigationService NavigationService { get; private set; }
         protected IPageDialogService DialogService { get; private set; }
-
         public string Title { get; set; }
+
         public ViewModelBase(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             NavigationService = navigationService;
