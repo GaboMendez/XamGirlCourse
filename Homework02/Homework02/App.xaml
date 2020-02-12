@@ -39,11 +39,19 @@
                 <Setter Property="FontSize" Value="19"></Setter>
             </Style>
 
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="DarkGray" />
+                <Setter Property="TextColor" Value="#999abb" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="22"></Setter>
+            </Style>
+
             <Style x:Key="FrameSimple" TargetType="Frame">
                 <Setter Property="CornerRadius" Value="6" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Padding" Value="0" />
-                <Setter Property="HasShadow" Value="True"></Setter>
+                <Setter Property="HasShadow" Value="True" />
             </Style>
 
 

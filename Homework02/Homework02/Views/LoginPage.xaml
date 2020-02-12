@@ -55,26 +55,25 @@
                             <ColumnDefinition Width="2*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Entry Grid.Column="0" Grid.ColumnSpan="2" Placeholder=" Password"  PlaceholderColor="Gray" FontSize="19" IsPassword="True"
-                               HorizontalTextAlignment="Start" Text="{Binding Password}" FontFamily="{StaticResource PoppinsFont}" />
+                        <Entry Grid.Column="0" Grid.ColumnSpan="2" Placeholder=" Password" IsPassword="True"
+                               Style="{StaticResource EntryStyle}" Text="{Binding Password}" />
                         <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="10,0,15,0"/>
                     </Grid>
                 </Frame>
 
                 <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" VerticalOptions="Start"
-                       BackgroundColor="FloralWhite" BorderColor="DarkGray" 
-                       Margin="20,0" Padding="0,0" HasShadow="True" CornerRadius="20" >
-                    <Button BackgroundColor="White" BorderColor="DarkGray" TextColor="#999abb" 
-                            Text="&#x2714;  Log In"  FontAttributes="Bold" FontSize="22"></Button>
+                       Style="{StaticResource FrameSimple}" CornerRadius="20" 
+                       BackgroundColor="FloralWhite" BorderColor="DarkGray"  Margin="20,0" >
+                    <Button Text="&#x2714;  Log In"  
+                            Style="{StaticResource ButtonStyle}"></Button>
                 </Frame>
 
-                <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" 
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Start" 
-                   FontFamily="{StaticResource PoppinsBoldFont}" Style="{StaticResource LabelStyle}" 
-                   TextColor="DarkGray" Text="Login with" FontSize="16" />
+                <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" VerticalTextAlignment="Start" 
+                       FontFamily="{StaticResource PoppinsBoldFont}" Style="{StaticResource LabelStyle}" 
+                       Text="Login with" FontSize="17" TextColor="DarkGray" />
 
                 <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" VerticalOptions="Center"
-                  HeightRequest="50" ColumnSpacing="10" Margin="5,20">
+                      HeightRequest="50" ColumnSpacing="10" Margin="5,20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
