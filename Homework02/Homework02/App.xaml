@@ -28,7 +28,24 @@
                 <Setter Property="FontFamily" Value="{StaticResource PoppinsFont}" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
             </Style>
+
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsFont}" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="19"></Setter>
+            </Style>
+
+            <Style x:Key="FrameSimple" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HasShadow" Value="True"></Setter>
+            </Style>
+
 
         </ResourceDictionary>
 

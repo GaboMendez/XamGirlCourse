@@ -26,27 +26,29 @@
                     <RowDefinition Height="2*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsBoldFont}"
-                       Style="{StaticResource LabelStyle}" TextColor="Black" FontAttributes="Bold" FontSize="32"  Text="Login" Margin="20,0"/>
+                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start"
+                       FontFamily="{StaticResource PoppinsBoldFont}" Style="{StaticResource LabelStyle}" 
+                       FontSize="32"  Text="Login" Margin="20,0"/>
 
-                <Label Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontFamily="{StaticResource PoppinsSemiBoldFont}"
-                       Style="{StaticResource LabelStyle}" TextColor="DarkGray" Text="Sign Up" FontAttributes="Bold" FontSize="18" Margin="20,0">
+                <Label Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" 
+                       FontFamily="{StaticResource PoppinsSemiBoldFont}" Style="{StaticResource LabelStyle}" 
+                       TextColor="DarkGray" Text="Sign Up" FontAttributes="Bold" FontSize="18" Margin="20,0">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SignupCommand}"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
 
                 <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"  Source="ic_user" 
-                   HeightRequest="110" WidthRequest="110" Margin="0,10,0,10"></Image>
+                       HeightRequest="110" WidthRequest="110" Margin="0,10,0,10"></Image>
 
-                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"  CornerRadius="5" 
-                   VerticalOptions="Center" Padding="0,0" HasShadow="True">
-                    <Entry Placeholder=" Username or email address "  PlaceholderColor="Gray" FontFamily="{StaticResource PoppinsFont}"
-                           HorizontalTextAlignment="Start" Text="{Binding User}"  FontSize="19"/>
+                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"  
+                       Style="{StaticResource FrameSimple}">
+                    <Entry Placeholder=" Username or email address "
+                           Style="{StaticResource EntryStyle}"  Text="{Binding User}"/>
                 </Frame>
 
-                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" CornerRadius="5" 
-                   VerticalOptions="Center" Padding="0,0" HasShadow="True">
+                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" 
+                       Style="{StaticResource FrameSimple}" VerticalOptions="Start" >
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="9*"></ColumnDefinition>
