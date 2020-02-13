@@ -4,9 +4,9 @@
              xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
              x:Class="Homework02.App">
 	<Application.Resources>
-
-		<!-- Application resource dictionary -->
+        <!-- Application resource dictionary -->
         <ResourceDictionary>
+
             <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBlackFont">
                 <On Platform="Android" Value="Poppins-Black.ttf#Poppins Black" />
             </OnPlatform>
@@ -47,13 +47,12 @@
                 <Setter Property="FontSize" Value="22"></Setter>
             </Style>
 
-            <Style x:Key="FrameSimple" TargetType="Frame">
+            <Style x:Key="FrameEntry" TargetType="Frame">
                 <Setter Property="CornerRadius" Value="6" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="HasShadow" Value="True" />
             </Style>
-
 
         </ResourceDictionary>
 

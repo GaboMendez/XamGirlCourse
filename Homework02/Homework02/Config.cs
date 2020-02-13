@@ -14,6 +14,6 @@ namespace Homework02
 
         //Pages
         public static string Login = "LoginPage";
-        public static string Signup = "SignUpPage";
+        public static string Signup = "SignupPage";
     }
 }

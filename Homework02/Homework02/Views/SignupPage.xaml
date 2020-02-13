@@ -4,9 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:Homework02.Controls"
-             mc:Ignorable="d"  NavigationPage.HasNavigationBar="False"
+             mc:Ignorable="d" NavigationPage.HasNavigationBar="False"
              BackgroundColor="White"
-             x:Class="Homework02.Views.LoginPage">
+             x:Class="Homework02.Views.SignupPage">
 
     <ContentPage.Content>
         <ScrollView>
@@ -22,34 +22,42 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.5*"></RowDefinition>
                     <RowDefinition Height="2.5*"></RowDefinition>
-                    <RowDefinition Height="1.25*"></RowDefinition>
-                    <RowDefinition Height="1.25*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1.5*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start"
                        FontFamily="{StaticResource PoppinsBoldFont}" Style="{StaticResource LabelStyle}" 
-                       FontSize="32"  Text="Login" Margin="20,0"/>
+                       FontSize="32"  Text="Sign Up" Margin="20,0"/>
 
                 <Label Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" 
                        FontFamily="{StaticResource PoppinsSemiBoldFont}" Style="{StaticResource LabelStyle}" 
-                       TextColor="DarkGray" Text="Sign Up" FontAttributes="Bold" FontSize="18" Margin="20,0">
+                       TextColor="DarkGray" Text="Login" FontAttributes="Bold" FontSize="18" Margin="20,0">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SignupCommand}"></TapGestureRecognizer>
+                        <TapGestureRecognizer Command="{Binding LoginCommand}"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
 
-                <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"  Source="ic_user" 
+                <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"  Source="ic_camara" 
                        HeightRequest="110" WidthRequest="110" Margin="0,10,0,10"></Image>
 
                 <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"  
                        Style="{StaticResource FrameEntry}">
-                    <controls:CustomEntry Placeholder=" Username or email address"
-                                          Style="{StaticResource EntryStyle}"  Text="{Binding User}"/>
+                    <controls:CustomEntry Placeholder=" Email address " Keyboard="Email"
+                                          Style="{StaticResource EntryStyle}"  Text="{Binding Email}"/>
                 </Frame>
 
-                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" 
+                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3"  
+                       Style="{StaticResource FrameEntry}">
+                    <controls:CustomEntry Placeholder=" Username "
+                                          Style="{StaticResource EntryStyle}"  Text="{Binding Username}"/>
+                </Frame>
+
+                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" 
                        Style="{StaticResource FrameEntry}" VerticalOptions="Start" >
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -67,31 +75,34 @@
                     </Grid>
                 </Frame>
 
-                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" VerticalOptions="Start"
-                       Style="{StaticResource FrameEntry}" CornerRadius="20" 
-                       BackgroundColor="FloralWhite" BorderColor="DarkGray"  Margin="20,0" >
-                    <Button Text="&#x2714;  Log In" Command="{Binding LoginCommand}" 
-                            Style="{StaticResource ButtonStyle}"></Button>
+                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" 
+                       Style="{StaticResource FrameEntry}" VerticalOptions="Start" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <controls:CustomEntry Grid.Column="0" Placeholder=" Repeat Password" IsPassword="{Binding BoolConfirmPassword}"
+                                              Style="{StaticResource EntryStyle}" Text="{Binding ConfirmPassword}" />
+                        <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="20,0,10,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowConfirmPassword}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
                 </Frame>
 
-                <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" VerticalTextAlignment="Start" 
+                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" VerticalOptions="Start"
+                       Style="{StaticResource FrameEntry}" CornerRadius="20" 
+                       BackgroundColor="FloralWhite" BorderColor="DarkGray"  Margin="20,0" >
+                    <Button Text="&#x2714;  Sign Up" Command="{Binding SignUpCommand}"
+                            Style="{StaticResource ButtonStyle}" ></Button>
+                </Frame>
+
+                <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" VerticalTextAlignment="End" 
                        FontFamily="{StaticResource PoppinsBoldFont}" Style="{StaticResource LabelStyle}" 
-                       Text="Login with" FontSize="17" TextColor="DarkGray" />
-
-                <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" VerticalOptions="Center"
-                      HeightRequest="50" ColumnSpacing="10" Margin="5,20">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <Image Grid.Column="0" Source="ic_google" />
-                    <Image Grid.Column="1" Source="ic_github" />
-                    <Image Grid.Column="2" Source="ic_twitter" />
-                    <Image Grid.Column="3" Source="ic_facebook" />
-                </Grid>
+                       Text="Terms of Service" FontSize="17" TextColor="DarkGray" />
             </Grid>
 
         </ScrollView>
