@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" xmlns:views="clr-namespace:Homework02.Views"
              x:Class="Homework02.Views.MainTabbedPage" BarBackgroundColor="White"
+             NavigationPage.HasNavigationBar="False"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom"
              android:TabbedPage.BarItemColor="#373737"
@@ -12,11 +13,43 @@
 
     <TabbedPage.Children>
 
+        <NavigationPage Title="Home" IconImageSource="ic_home">
+            <x:Arguments>
+                <views:MainPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Discovery" IconImageSource="ic_pin">
+            <x:Arguments>
+                <views:DiscoveryPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Bookmark" IconImageSource="ic_bookmark">
+            <x:Arguments>
+                <views:MainPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Foodie" IconImageSource="ic_award">
+            <x:Arguments>
+                <views:MainPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Profile" IconImageSource="ic_profile">
+            <x:Arguments>
+                <views:MainPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <!--
         <views:MainPage Title="Home" IconImageSource="ic_home" />
         <views:DiscoveryPage Title="Discovery" IconImageSource="ic_pin" />
         <views:MainPage Title="Bookmark" IconImageSource="ic_bookmark" />
         <views:MainPage Title="Foodie" IconImageSource="ic_award" />
         <views:MainPage Title="Profile" IconImageSource="ic_profile" />
+        -->
 
     </TabbedPage.Children>
 

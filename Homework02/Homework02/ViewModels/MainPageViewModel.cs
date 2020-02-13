@@ -14,7 +14,7 @@ namespace Homework02.ViewModels
         public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
-            Title = "Main Page";
+            Title = "Title";
         }
     }
 }

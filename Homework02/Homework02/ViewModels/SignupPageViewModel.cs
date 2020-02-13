@@ -39,7 +39,7 @@ namespace Homework02.ViewModels
                 {
                     if (Password.Equals(ConfirmPassword))
                     {
-                        await Task.Delay(1000);
+                        await Task.Delay(500);
                         // Navigate to Home
                     }
                     else

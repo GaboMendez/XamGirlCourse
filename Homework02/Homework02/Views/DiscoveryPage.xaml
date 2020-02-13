@@ -3,14 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" BackgroundColor="#f2f2f4" 
+             mc:Ignorable="d" BackgroundColor="#f2f2f4"
              NavigationPage.HasNavigationBar="True"
              x:Class="Homework02.Views.DiscoveryPage">
 
     <NavigationPage.TitleView>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
-            <Label  Style="{StaticResource LabelStyle}" FontFamily="{StaticResource PoppinsBoldFont}"
-                    Text="Hola" FontSize="20" VerticalTextAlignment="Start" Margin="20,0,20,0"/>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label  Style="{StaticResource LabelStyle}" 
+                    FontFamily="{StaticResource PoppinsBoldFont}"
+                    Text="{Binding Title}" FontSize="21" Margin="0,10,0,0"/>
         </StackLayout>
     </NavigationPage.TitleView>
 

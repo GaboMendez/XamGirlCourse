@@ -32,7 +32,7 @@ namespace Homework02.ViewModels
                 }
                 else
                 {
-                    await Task.Delay(1000);
+                    await Task.Delay(500);
 
                     // Navigate to Home
                     await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
