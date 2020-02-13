@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" xmlns:views="clr-namespace:Homework02.Views"
+             x:Class="Homework02.Views.MainTabbedPage" BarBackgroundColor="White"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.BarItemColor="#373737"
+             android:TabbedPage.BarSelectedItemColor="#ffcc2a">
+
+    <TabbedPage.Children>
+
+        <views:MainPage Title="Home" IconImageSource="ic_home" />
+        <views:DiscoveryPage Title="Discovery" IconImageSource="ic_pin" />
+        <views:MainPage Title="Bookmark" IconImageSource="ic_bookmark" />
+        <views:MainPage Title="Foodie" IconImageSource="ic_award" />
+        <views:MainPage Title="Profile" IconImageSource="ic_profile" />
+
+    </TabbedPage.Children>
+
+</TabbedPage>

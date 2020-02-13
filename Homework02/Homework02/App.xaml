@@ -23,6 +23,11 @@
                 <On Platform="Android" Value="Poppins-SemiBold.ttf#Poppins SemiBold" />
             </OnPlatform>
 
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="White" />
+                <Setter Property="BarTextColor" Value="Black" />
+            </Style>
+
             <Style x:Key="LabelStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontFamily" Value="{StaticResource PoppinsFont}" />
