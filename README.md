@@ -1,4 +1,4 @@
-# Extra 01 - Discovery Page
+# Extra 01
 Replicate the design of this page.
 
 <p aling="center">
