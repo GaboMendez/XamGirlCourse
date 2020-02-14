@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Homework02.Views.FrameView">
+  <ContentView.Content>
+      <Frame HasShadow="True" CornerRadius="5"
+             BackgroundColor="White" BorderColor="LightGray">
+          <StackLayout VerticalOptions="Fill" HorizontalOptions="Center" Margin="-10,-10">
+              <Image x:Name="image" HeightRequest="85" WidthRequest="85" />
+              <Label x:Name="title" FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                     Style="{StaticResource LabelStyle}" FontSize="15" Margin="0,0,0,-10"  />
+              <Label x:Name="text" FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                     Style="{StaticResource LabelStyle}" FontSize="13" TextColor="DarkGray" />
+          </StackLayout>
+      </Frame>
+    </ContentView.Content>
+</ContentView>

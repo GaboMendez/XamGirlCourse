@@ -2,11 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Homework02.Views.MainPage"
-             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasNavigationBar="True"
              BackgroundColor="#f2f2f4" >
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to this Page!" />
-    </StackLayout>
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label  Style="{StaticResource LabelStyle}" 
+                    FontFamily="{StaticResource PoppinsBoldFont}"
+                    Text="{Binding Title}" FontSize="21" Margin="0,10,0,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Discovery Page!"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+
 
 </ContentPage>

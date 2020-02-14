@@ -39,8 +39,10 @@ namespace Homework02.ViewModels
                 {
                     if (Password.Equals(ConfirmPassword))
                     {
-                        await Task.Delay(500);
+                        await Task.Delay(400);
+
                         // Navigate to Home
+                        await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
                     }
                     else
                         await DialogService.DisplayAlertAsync("Passwords do not match! \nTry again!", null, "Ok");
