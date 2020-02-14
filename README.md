@@ -1,4 +1,4 @@
-# Homework 01 - Login Page
+# Homework 01
 Replicate the design of these two pages.
 
 <p aling="center">
