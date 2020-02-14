@@ -14,11 +14,19 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Discovery Page!"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+            <Label Text="Welcome to this Page!" Margin="0,30"
+                   FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                   Style="{StaticResource LabelStyle}" FontSize="17"
+                   VerticalOptions="Start" HorizontalTextAlignment="Center"/>
+
+            <Frame VerticalOptions="End" Margin="60,30" 
+                   Style="{StaticResource FrameEntry}" CornerRadius="20" 
+                   BackgroundColor="FloralWhite" BorderColor="DarkGray" >
+                <Button Text="&#x2716;  Log Out" Command="{Binding LogoutCommand}" 
+                        Style="{StaticResource ButtonStyle}"></Button>
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 
 

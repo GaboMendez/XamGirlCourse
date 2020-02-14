@@ -12,6 +12,7 @@ namespace Homework02.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FrameView : ContentView
     {
+        public bool Selected { get; set; } = false;
         public string Image
         {
             set => image.Source = value;
@@ -28,6 +29,26 @@ namespace Homework02.Views
         public FrameView()
         {
             InitializeComponent();
+        }
+
+        private void Frame_OnTapped(object sender, EventArgs e)
+        {
+            if (Selected)
+            {
+                Selected = false;
+
+                text.TextColor = Color.DarkGray;
+                frame.BackgroundColor = Color.FromHex("FFFFFF");
+                frame.Margin = new Thickness(0, 0, 0, 0);
+            }
+            else
+            {
+                Selected = true;
+
+                text.TextColor = Color.Black;
+                frame.BackgroundColor = Color.FromHex("FFCC2A");
+                frame.Margin = new Thickness(0, -5, 0, 5);
+            }
         }
     }
 }
