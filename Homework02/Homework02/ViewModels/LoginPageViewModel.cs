@@ -13,8 +13,9 @@ namespace Homework02.ViewModels
         // Properties
         public string User { get; set; }
         public string Password { get; set; }
-
         public bool BoolPassword { get; set; } = true;
+        public bool CanExecute { get; set; } = true;
+
         // Commands
         public DelegateCommand LoginCommand { get; set; }
         public DelegateCommand SignupCommand { get; set; }
@@ -26,22 +27,37 @@ namespace Homework02.ViewModels
 
             LoginCommand = new DelegateCommand(async () =>
             {
-                if (String.IsNullOrEmpty(User) || String.IsNullOrEmpty(Password))
+                if (CanExecute)
                 {
-                    await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
-                }
-                else
-                {
-                    await Task.Delay(400);
+                    CanExecute = false;
 
-                    // Navigate to Home
-                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
+                    if (String.IsNullOrEmpty(User) || String.IsNullOrEmpty(Password))
+                    {
+                        await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
+                    }
+                    else
+                    {
+                        await Task.Delay(400);
+
+                        // Navigate to Home
+                        await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
+                    }
+
+                    CanExecute = true;
                 }
+               
             });
 
             SignupCommand = new DelegateCommand(async () =>
             {
-                await NavigationService.NavigateAsync(new Uri($"/{Constants.Signup}", UriKind.Relative));
+                if (CanExecute)
+                {
+                    CanExecute = false;
+
+                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Signup}", UriKind.Relative));
+
+                    CanExecute = true;
+                }
             });
 
             ShowPassword = new DelegateCommand(() =>

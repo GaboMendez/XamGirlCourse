@@ -15,9 +15,9 @@
 
     <ContentPage.Content>
         <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+
             <Label Text="Welcome to this Page!" Margin="0,30"
-                   FontFamily="{StaticResource PoppinsSemiBoldFont}"
-                   Style="{StaticResource LabelStyle}" FontSize="17"
+                   Style="{StaticResource LabelStyle}" FontSize="18"
                    VerticalOptions="Start" HorizontalTextAlignment="Center"/>
 
             <Frame VerticalOptions="End" Margin="60,30" 
@@ -26,6 +26,7 @@
                 <Button Text="&#x2716;  Log Out" Command="{Binding LogoutCommand}" 
                         Style="{StaticResource ButtonStyle}"></Button>
             </Frame>
+            
         </Grid>
     </ContentPage.Content>
 

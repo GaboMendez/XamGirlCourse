@@ -15,9 +15,9 @@ namespace Homework02.ViewModels
         public string Username { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
-
         public bool BoolPassword { get; set; } = true;
         public bool BoolConfirmPassword { get; set; } = true;
+        public bool CanExecute { get; set; } = true;
 
         // Commands
         public DelegateCommand SignUpCommand { get; set; }
@@ -31,27 +31,42 @@ namespace Homework02.ViewModels
 
             SignUpCommand = new DelegateCommand(async () =>
             {
-                if (String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(Username) || String.IsNullOrEmpty(Password) || String.IsNullOrEmpty(ConfirmPassword))
+                if (CanExecute)
                 {
-                    await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
-                }
-                else
-                {
-                    if (Password.Equals(ConfirmPassword))
-                    {
-                        await Task.Delay(400);
+                    CanExecute = false;
 
-                        // Navigate to Home
-                        await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
+                    if (String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(Username) || String.IsNullOrEmpty(Password) || String.IsNullOrEmpty(ConfirmPassword))
+                    {
+                        await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
                     }
                     else
-                        await DialogService.DisplayAlertAsync("Passwords do not match! \nTry again!", null, "Ok");
+                    {
+                        if (Password.Equals(ConfirmPassword))
+                        {
+                            await Task.Delay(400);
+
+                            // Navigate to Home
+                            await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
+                        }
+                        else
+                            await DialogService.DisplayAlertAsync("Passwords do not match! \nTry again!", null, "Ok");
+                    }
+
+                    CanExecute = true;
                 }
+           
             });
 
             LoginCommand = new DelegateCommand(async () =>
             {
-                await NavigationService.NavigateAsync(new Uri($"/{Constants.Login}", UriKind.Relative));
+                if (CanExecute)
+                {
+                    CanExecute = false;
+
+                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Login}", UriKind.Relative));
+
+                    CanExecute = true;
+                }
             });
 
             ShowPassword = new DelegateCommand(() =>
