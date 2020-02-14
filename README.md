@@ -1,4 +1,4 @@
-# Homework 02 - Login Page, Signup Page, Discovery Page
+# Homework 02
 
 * Replicate the design of these two pages. Based on the last task, connect the Login / Registration page so that they can navigate each other
 <p aling="center">
