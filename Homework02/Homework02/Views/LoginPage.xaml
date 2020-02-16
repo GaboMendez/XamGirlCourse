@@ -14,8 +14,10 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="4*"></ColumnDefinition>
-                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
@@ -28,11 +30,11 @@
                     <RowDefinition Height="2*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Start"
+                <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" HorizontalTextAlignment="Start"
                        FontFamily="{StaticResource PoppinsBoldFont}" Style="{StaticResource LabelStyle}" 
                        FontSize="32"  Text="Login" Margin="20,0"/>
 
-                <Label Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="End" 
+                <Label Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="0" HorizontalTextAlignment="End" 
                        FontFamily="{StaticResource PoppinsSemiBoldFont}" Style="{StaticResource LabelStyle}" 
                        TextColor="DarkGray" Text="Sign Up" FontAttributes="Bold" FontSize="18" Margin="20,0">
                     <Label.GestureRecognizers>
@@ -40,16 +42,16 @@
                     </Label.GestureRecognizers>
                 </Label>
 
-                <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"  Source="ic_user" 
+                <Image Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1"  Source="ic_user" 
                        HeightRequest="110" WidthRequest="110" Margin="0,10,0,10"></Image>
 
-                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"  
+                <Frame Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="2"  
                        Style="{StaticResource FrameEntry}">
                     <controls:CustomEntry Placeholder=" Username or email address"
-                                          Style="{StaticResource EntryStyle}"  Text="{Binding User}"/>
+                                          Style="{StaticResource EntryStyle}"  Text="{Binding ActualUser.Username}"/>
                 </Frame>
 
-                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" 
+                <Frame Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="3" 
                        Style="{StaticResource FrameEntry}" VerticalOptions="Start" >
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -58,40 +60,35 @@
                         </Grid.ColumnDefinitions>
 
                         <controls:CustomEntry Grid.Column="0" Placeholder=" Password" IsPassword="{Binding BoolPassword}"
-                                              Style="{StaticResource EntryStyle}" Text="{Binding Password}" />
+                                              Style="{StaticResource EntryStyle}" Text="{Binding ActualUser.Password}" />
                         <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="20,0,10,0">
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ShowPassword}"></TapGestureRecognizer>
+                                <TapGestureRecognizer Command="{Binding ShowPasswordCommand}"></TapGestureRecognizer>
                             </Image.GestureRecognizers>
                         </Image>
                     </Grid>
                 </Frame>
 
-                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" VerticalOptions="Start"
+                <Frame Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4" VerticalOptions="Start"
                        Style="{StaticResource FrameEntry}" CornerRadius="20" 
                        BackgroundColor="FloralWhite" BorderColor="DarkGray"  Margin="20,0" >
                     <Button Text="&#x2714;  Log In" Command="{Binding LoginCommand}" 
                             Style="{StaticResource ButtonStyle}"></Button>
                 </Frame>
 
-                <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" VerticalTextAlignment="Start" 
+                <Label Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="5" VerticalTextAlignment="Start" 
                        FontFamily="{StaticResource PoppinsBoldFont}" Style="{StaticResource LabelStyle}" 
                        Text="Login with" FontSize="17" TextColor="DarkGray" />
 
-                <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" VerticalOptions="Center"
-                      HeightRequest="50" ColumnSpacing="10" Margin="5,20">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <Image Grid.Column="0" Source="ic_google" />
-                    <Image Grid.Column="1" Source="ic_github" />
-                    <Image Grid.Column="2" Source="ic_twitter" />
-                    <Image Grid.Column="3" Source="ic_facebook" />
-                </Grid>
+                <Image Grid.Column="1" Grid.Row="5" Margin="0,0" WidthRequest="50"
+                       VerticalOptions="Center" HorizontalOptions="Center" Source="ic_google" />
+                <Image Grid.Column="2" Grid.Row="5" WidthRequest="50"
+                       VerticalOptions="Center" HorizontalOptions="Center" Source="ic_github" />
+                <Image Grid.Column="3" Grid.Row="5" WidthRequest="50"
+                       VerticalOptions="Center" HorizontalOptions="Center" Source="ic_twitter" />
+                <Image Grid.Column="4" Grid.Row="5" WidthRequest="50"
+                       VerticalOptions="Center" HorizontalOptions="Center" Source="ic_facebook" />
+                
             </Grid>
 
         </ScrollView>

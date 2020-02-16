@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Homework02.Models;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
@@ -11,8 +12,7 @@ namespace Homework02.ViewModels
     public class SignupPageViewModel : ViewModelBase
     {
         // Properties
-        public string Email { get; set; }
-        public string Username { get; set; }
+        public User NewUser { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public bool BoolPassword { get; set; } = true;
@@ -22,20 +22,20 @@ namespace Homework02.ViewModels
         // Commands
         public DelegateCommand SignUpCommand { get; set; }
         public DelegateCommand LoginCommand { get; set; }
-        public DelegateCommand ShowPassword { get; set; }
-        public DelegateCommand ShowConfirmPassword { get; set; }
+        public DelegateCommand ShowPasswordCommand { get; set; }
+        public DelegateCommand ShowConfirmPasswordCommand { get; set; }
 
         public SignupPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
-
+            NewUser = new User();
             SignUpCommand = new DelegateCommand(async () =>
             {
                 if (CanExecute)
                 {
                     CanExecute = false;
 
-                    if (String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(Username) || String.IsNullOrEmpty(Password) || String.IsNullOrEmpty(ConfirmPassword))
+                    if (String.IsNullOrEmpty(NewUser.Email) || String.IsNullOrEmpty(NewUser.Username) || String.IsNullOrEmpty(Password) || String.IsNullOrEmpty(ConfirmPassword))
                     {
                         await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
                     }
@@ -43,6 +43,7 @@ namespace Homework02.ViewModels
                     {
                         if (Password.Equals(ConfirmPassword))
                         {
+                            NewUser.Password = Password;
                             await Task.Delay(400);
 
                             // Navigate to Home
@@ -69,25 +70,9 @@ namespace Homework02.ViewModels
                 }
             });
 
-            ShowPassword = new DelegateCommand(() =>
-            {
-                if (BoolPassword)
-                {
-                    BoolPassword = false;
-                }
-                else
-                    BoolPassword = true;
-            });
+            ShowPasswordCommand = new DelegateCommand(() => { BoolPassword =! BoolPassword; });
 
-            ShowConfirmPassword = new DelegateCommand(() =>
-            {
-                if (BoolConfirmPassword)
-                {
-                    BoolConfirmPassword = false;
-                }
-                else
-                    BoolConfirmPassword = true;
-            });
+            ShowConfirmPasswordCommand = new DelegateCommand(() => { BoolConfirmPassword =! BoolConfirmPassword; });
         }
     }
 }
