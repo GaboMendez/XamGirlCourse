@@ -80,14 +80,14 @@
                        FontFamily="{StaticResource PoppinsBoldFont}" Style="{StaticResource LabelStyle}" 
                        Text="Login with" FontSize="17" TextColor="DarkGray" />
 
-                <Image Grid.Column="1" Grid.Row="5" Margin="0,0" WidthRequest="50"
-                       VerticalOptions="Center" HorizontalOptions="Center" Source="ic_google" />
-                <Image Grid.Column="2" Grid.Row="5" WidthRequest="50"
-                       VerticalOptions="Center" HorizontalOptions="Center" Source="ic_github" />
-                <Image Grid.Column="3" Grid.Row="5" WidthRequest="50"
-                       VerticalOptions="Center" HorizontalOptions="Center" Source="ic_twitter" />
-                <Image Grid.Column="4" Grid.Row="5" WidthRequest="50"
-                       VerticalOptions="Center" HorizontalOptions="Center" Source="ic_facebook" />
+                <Image Grid.Column="1" Grid.Row="5" WidthRequest="50" Source="ic_google"
+                       VerticalOptions="Center" HorizontalOptions="Center" />
+                <Image Grid.Column="2" Grid.Row="5" WidthRequest="50" Source="ic_github"
+                       VerticalOptions="Center" HorizontalOptions="Center" />
+                <Image Grid.Column="3" Grid.Row="5" WidthRequest="50" Source="ic_twitter"
+                       VerticalOptions="Center" HorizontalOptions="Center" />
+                <Image Grid.Column="4" Grid.Row="5" WidthRequest="50" Source="ic_facebook"
+                       VerticalOptions="Center" HorizontalOptions="Center" />
                 
             </Grid>
 
