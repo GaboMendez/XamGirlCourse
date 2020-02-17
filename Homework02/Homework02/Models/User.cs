@@ -13,11 +13,5 @@ namespace Homework02.Models
 
         public User() { }
 
-        public User(string email, string username, string password)
-        {
-            this.Email = email;
-            this.Username = username;
-            this.Password = password;
-        }
     }
 }
