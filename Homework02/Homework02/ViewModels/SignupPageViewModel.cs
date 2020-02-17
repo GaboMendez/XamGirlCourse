@@ -13,11 +13,9 @@ namespace Homework02.ViewModels
     {
         // Properties
         public User NewUser { get; set; }
-        public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
+        public bool CanExecute { get; set; } = true;
         public bool BoolPassword { get; set; } = true;
         public bool BoolConfirmPassword { get; set; } = true;
-        public bool CanExecute { get; set; } = true;
 
         // Commands
         public DelegateCommand SignUpCommand { get; set; }
@@ -35,18 +33,18 @@ namespace Homework02.ViewModels
                 {
                     CanExecute = false;
 
-                    if (String.IsNullOrEmpty(NewUser.Email) || String.IsNullOrEmpty(NewUser.Username) || String.IsNullOrEmpty(Password) || String.IsNullOrEmpty(ConfirmPassword))
+                    if (String.IsNullOrEmpty(NewUser.Email) || String.IsNullOrEmpty(NewUser.Username) || String.IsNullOrEmpty(NewUser.Password) || String.IsNullOrEmpty(NewUser.ConfirmPassword))
                     {
                         await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
                     }
                     else
                     {
-                        if (Password.Equals(ConfirmPassword))
+                        if (NewUser.Password.Equals(NewUser.ConfirmPassword))
                         {
-                            NewUser.Password = Password;
-                            await Task.Delay(400);
-
                             // Navigate to Home
+                            NewUser.CreateUser(NewUser.Email, NewUser.Username, NewUser.Password);
+
+                            await Task.Delay(400);
                             await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
                         }
                         else
@@ -70,9 +68,9 @@ namespace Homework02.ViewModels
                 }
             });
 
-            ShowPasswordCommand = new DelegateCommand(() => { BoolPassword =! BoolPassword; });
+            ShowPasswordCommand = new DelegateCommand(() => { BoolPassword = !BoolPassword; });
 
-            ShowConfirmPasswordCommand = new DelegateCommand(() => { BoolConfirmPassword =! BoolConfirmPassword; });
+            ShowConfirmPasswordCommand = new DelegateCommand(() => { BoolConfirmPassword = !BoolConfirmPassword; });
         }
     }
 }

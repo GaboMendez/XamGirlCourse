@@ -66,7 +66,7 @@
                         </Grid.ColumnDefinitions>
 
                         <controls:CustomEntry Grid.Column="0" Placeholder=" Password" IsPassword="{Binding BoolPassword}"
-                                              Style="{StaticResource EntryStyle}" Text="{Binding Password}" />
+                                              Style="{StaticResource EntryStyle}" Text="{Binding NewUser.Password}" />
                         <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="20,0,10,0">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ShowPasswordCommand}"></TapGestureRecognizer>
@@ -84,7 +84,7 @@
                         </Grid.ColumnDefinitions>
 
                         <controls:CustomEntry Grid.Column="0" Placeholder=" Repeat Password" IsPassword="{Binding BoolConfirmPassword}"
-                                              Style="{StaticResource EntryStyle}" Text="{Binding ConfirmPassword}" />
+                                              Style="{StaticResource EntryStyle}" Text="{Binding NewUser.ConfirmPassword}" />
                         <Image Grid.Column="1" Source="ic_eye" HeightRequest="0" Margin="20,0,10,0">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ShowConfirmPasswordCommand}"></TapGestureRecognizer>

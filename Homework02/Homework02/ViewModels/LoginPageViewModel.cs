@@ -59,7 +59,7 @@ namespace Homework02.ViewModels
                 }
             });
 
-            ShowPasswordCommand = new DelegateCommand(() => { BoolPassword =! BoolPassword; });
+            ShowPasswordCommand = new DelegateCommand(() => { BoolPassword = !BoolPassword; });
         }
     }
 }
