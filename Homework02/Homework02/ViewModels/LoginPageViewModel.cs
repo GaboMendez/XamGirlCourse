@@ -25,41 +25,45 @@ namespace Homework02.ViewModels
             : base(navigationService, pageDialogService)
         {
             ActualUser = new User();
-            LoginCommand = new DelegateCommand(async () =>
-            {
-                if (CanExecute)
-                {
-                    CanExecute = false;
 
-                    if (String.IsNullOrEmpty(ActualUser.Username) || String.IsNullOrEmpty(ActualUser.Password))
-                    {
-                        await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
-                    }
-                    else
-                    {
-                        // Navigate to Home
-                        await Task.Delay(400);
-                        await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
-                    }
+            LoginCommand = new DelegateCommand(async () => { await Login(); });
 
-                    CanExecute = true;
-                }
-               
-            });
-
-            SignupCommand = new DelegateCommand(async () =>
-            {
-                if (CanExecute)
-                {
-                    CanExecute = false;
-
-                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Signup}", UriKind.Relative));
-
-                    CanExecute = true;
-                }
-            });
+            SignupCommand = new DelegateCommand(async () => { await Signup(); });
 
             ShowPasswordCommand = new DelegateCommand(() => { BoolPassword = !BoolPassword; });
+        }
+
+        private async Task Login()
+        {
+            if (CanExecute)
+            {
+                CanExecute = false;
+
+                if (String.IsNullOrEmpty(ActualUser.Username) || String.IsNullOrEmpty(ActualUser.Password))
+                {
+                    await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
+                }
+                else
+                {
+                    // Navigate to Home
+                    await Task.Delay(400);
+                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
+                }
+
+                CanExecute = true;
+            }
+        }
+
+        private async Task Signup()
+        {
+            if (CanExecute)
+            {
+                CanExecute = false;
+
+                await NavigationService.NavigateAsync(new Uri($"/{Constants.Signup}", UriKind.Relative));
+
+                CanExecute = true;
+            }
         }
     }
 }

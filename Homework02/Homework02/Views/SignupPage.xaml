@@ -96,7 +96,7 @@
                 <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" VerticalOptions="Start"
                        Style="{StaticResource FrameEntry}" CornerRadius="20" 
                        BackgroundColor="FloralWhite" BorderColor="DarkGray"  Margin="20,0" >
-                    <Button Text="&#x2714;  Sign Up" Command="{Binding SignUpCommand}"
+                    <Button Text="&#x2714;  Sign Up" Command="{Binding SignupCommand}"
                             Style="{StaticResource ButtonStyle}" ></Button>
                 </Frame>
 
