@@ -11,7 +11,9 @@ namespace Homework02.Models
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
 
-        public void CreateUser(string email, string username, string password)
+        public User() { }
+
+        public User(string email, string username, string password)
         {
             this.Email = email;
             this.Username = username;

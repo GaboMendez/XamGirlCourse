@@ -64,7 +64,7 @@ namespace Homework02.ViewModels
                     if (NewUser.Password.Equals(NewUser.ConfirmPassword))
                     {
                         // Navigate to Home
-                        NewUser.CreateUser(NewUser.Email, NewUser.Username, NewUser.Password);
+                        NewUser = new User(NewUser.Email, NewUser.Username, NewUser.Password);
 
                         await Task.Delay(400);
                         await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
