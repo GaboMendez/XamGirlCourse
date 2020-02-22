@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Homework04.Views.MainPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             BackgroundColor="WhiteSmoke">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Button Command="{Binding buttCommand}" Text="Click!" FontAttributes="Bold" FontSize="20" />
     </StackLayout>
 
 </ContentPage>
