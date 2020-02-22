@@ -65,7 +65,7 @@ namespace Homework04.ViewModels
                     {
                         // Navigate to Home
                         await Task.Delay(400);
-                        await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
+                        await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Contact}", UriKind.Absolute));
                     }
                     else
                         await DialogService.DisplayAlertAsync("Passwords do not match! \nTry again!", null, "Ok");

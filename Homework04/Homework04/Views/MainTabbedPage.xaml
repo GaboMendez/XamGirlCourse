@@ -15,7 +15,7 @@
 
         <NavigationPage Title="Home" IconImageSource="ic_home">
             <x:Arguments>
-                <views:MainPage />
+                <views:ContactPage />
             </x:Arguments>
         </NavigationPage>
 

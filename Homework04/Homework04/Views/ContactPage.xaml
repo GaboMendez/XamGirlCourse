@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Homework04.Controls"
+             mc:Ignorable="d" Title="{Binding Title}"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Homework04.Views.ContactPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+
+                <Frame Margin="20,20,20,10" VerticalOptions="Start"
+                       Style="{StaticResource FrameEntry}" HeightRequest="55" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="6*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ic_menu" HeightRequest="0" Margin="10,0,0,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding .}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        
+                        <Image Grid.Column="2" Source="ic_more" HeightRequest="0" Margin="5,0,5,0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding .}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <controls:CustomEntry Grid.Column="1" Placeholder=" Search contacts" FontSize="18" VerticalOptions="End"
+                                              Style="{StaticResource EntryStyle}" Text="{Binding Contact}" />
+
+                        <Image Source="ic_user" Grid.Column="3" Margin="10"
+                               VerticalOptions="Center" HorizontalOptions="Center" />
+                    </Grid>
+                </Frame>
+
+                <Label Text="Welcome to Xamarin.Forms!"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" />
+
+                <Frame BackgroundColor="#1774eb" CornerRadius="30" HasShadow="True" 
+                       WidthRequest="15" HeightRequest="15" Margin="0,0,10,10"
+                       VerticalOptions="End" HorizontalOptions="End">
+                    <Image Source="ic_add" HeightRequest="15" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding .}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+            </Grid>
+        </ScrollView>
+      
+    </ContentPage.Content>
+
+</ContentPage>

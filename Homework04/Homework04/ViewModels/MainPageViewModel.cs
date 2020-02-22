@@ -11,29 +11,18 @@ namespace Homework04.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        public int N { get; set; } = 0;
-
-        public DelegateCommand buttCommand { get; set; }
-        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+        public DelegateCommand LogoutCommand { get; set; }
+        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
-            Title = "Main Page";
+            Title = "Title";
 
-            buttCommand = new DelegateCommand(() =>
+            LogoutCommand = new DelegateCommand(async () =>
             {
-                List<string> val = new List<string>
+                var answer = await DialogService.DisplayAlertAsync("Are you sure you want to \nlog out?", null, "Yes", "No");
+                if (answer)
                 {
-                    "Prueba 01",
-                    "Prueba 02",
-                    "Prueba 03"
-                };
-
-                Title = val[N];
-                N++;
-
-                if (N.Equals(val.Count))
-                {
-                    N = 0;
+                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.Login}", UriKind.Absolute));
                 }
             });
         }

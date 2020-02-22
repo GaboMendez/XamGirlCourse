@@ -30,6 +30,7 @@ namespace Homework04.Droid.Renderers
             if (Control != null)
             {
                 Control.SetBackgroundColor(global::Android.Graphics.Color.Transparent);
+                Control.Gravity = GravityFlags.CenterVertical;
             }
         }
     }
