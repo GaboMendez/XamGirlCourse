@@ -24,8 +24,8 @@ namespace Homework04
         {
             InitializeComponent();
 
-            //await NavigationService.NavigateAsync("NavigationPage/MainPage");
-            await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
+            await NavigationService.NavigateAsync($"{Constants.Navigation}/{Constants.Login}");
+            //await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute));
 
         }
 
@@ -35,6 +35,8 @@ namespace Homework04
             containerRegistry.RegisterForNavigation<NavigationPage>();
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<SignupPage, SignupPageViewModel>();
             containerRegistry.RegisterForNavigation<DiscoveryPage, DiscoveryPageViewModel>();
 
         }
