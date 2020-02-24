@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using Homework04.Models;
+using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 
@@ -11,6 +12,8 @@ namespace Homework04.ViewModels
 {
     public class ContactPageViewModel : ViewModelBase
     {
+        // Properties
+        public bool CanExecute { get; set; } = true;
         public ObservableCollection<Contact> Contacts { get; set; }
         private Contact _selectedContact;
         public Contact selectedContact
@@ -26,6 +29,9 @@ namespace Homework04.ViewModels
             }
         }
 
+        // Commands
+        public DelegateCommand AddCommand { get; set; }
+
  
 
         public ContactPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
@@ -33,7 +39,11 @@ namespace Homework04.ViewModels
         {
             Title = "Contact";
             Contacts = GetContacts();
+
+            AddCommand = new DelegateCommand(async () => { await Add(); });
         }
+
+      
 
         private ObservableCollection<Contact> GetContacts()
         {
@@ -59,6 +69,18 @@ namespace Homework04.ViewModels
                              $"Email: {contact.Email} \n Type: {contact.TypeEmail} ";
 
             await DialogService.DisplayAlertAsync(selectedContact.FullName, details, "Ok");
+        }
+
+        private async Task Add()
+        {
+            if (CanExecute)
+            {
+                CanExecute = false;
+
+                await NavigationService.NavigateAsync(new Uri($"/{Constants.AddOrEdit}", UriKind.Relative));
+
+                CanExecute = true;
+            }
         }
     }
 }

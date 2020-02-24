@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:Homework04.Controls"
-             mc:Ignorable="d" Title="{Binding Title}"
+             mc:Ignorable="d" Title="{Binding Title}" 
+             BackgroundColor="White"
              NavigationPage.HasNavigationBar="False"
              x:Class="Homework04.Views.ContactPage">
 

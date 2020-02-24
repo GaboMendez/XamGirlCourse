@@ -3,8 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             mc:Ignorable="d" Title="{Binding Title}"
+             BackgroundColor="#f2f2f4"
              x:Class="Homework04.Views.AddEditContactPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Order="Primary" Priority="0" Command="{Binding .}" />
+        <ToolbarItem Text="Other Option" Order="Secondary" Priority="1" Command="{Binding .}" />
+        <ToolbarItem Text="Other Option" Order="Secondary" Priority="2" Command="{Binding .}" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
@@ -12,4 +20,5 @@
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

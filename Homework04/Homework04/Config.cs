@@ -17,6 +17,7 @@ namespace Homework04
         public static string Login = "LoginPage";
         public static string Signup = "SignupPage";
         public static string Contact = "ContactPage";
+        public static string AddOrEdit = "AddEditContactPage";
         public static string Discovery = "DiscoveryPage";
     }
 }

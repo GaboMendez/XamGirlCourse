@@ -11,6 +11,7 @@ namespace Homework04.ViewModels
         public AddEditContactPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
+            Title = "Create Contact";
         }
     }
 }
