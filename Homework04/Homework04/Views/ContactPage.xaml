@@ -12,7 +12,7 @@
         <ScrollView>
             <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
 
-                <Frame Margin="20,20,20,10" VerticalOptions="Start"
+                <Frame Margin="20,20,20,0" VerticalOptions="Start"
                        Style="{StaticResource FrameEntry}" HeightRequest="55" >
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -42,18 +42,60 @@
                     </Grid>
                 </Frame>
 
-                <Label Text="Welcome to Xamarin.Forms!"
-                       VerticalOptions="Center" 
-                       HorizontalOptions="Center" />
+                <ListView Margin="0,80,0,0" x:Name="ContactList"
+                          VerticalOptions="Start"
+                          ItemsSource="{Binding Contacts}"
+                          SelectedItem="{Binding selectedContact}"
+                          HasUnevenRows="True">
 
-                <Frame BackgroundColor="#1774eb" CornerRadius="30" HasShadow="True" 
-                       WidthRequest="15" HeightRequest="15" Margin="0,0,10,10"
-                       VerticalOptions="End" HorizontalOptions="End">
-                    <Image Source="ic_add" HeightRequest="15" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding .}"/>
-                    </Frame.GestureRecognizers>
-                </Frame>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Command="{Binding Path=BindingContext.UpdateEmployeeCommand, Source={x:Reference Name=ContactList}}"
+                                              CommandParameter="{Binding .}"
+                                              Text="Update" />
+
+                                    <MenuItem Command="{Binding Path=BindingContext.DeleteEmployeeCommand, Source={x:Reference Name=ContactList}}"
+                                              CommandParameter="{Binding .}"
+                                              Text="Delete" 
+                                              IsDestructive="True" />
+                                </ViewCell.ContextActions>
+
+                                <Grid HeightRequest="55">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="7*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding Category}" Grid.Column="0" Margin="8"
+                                           VerticalOptions="Center" HorizontalOptions="Center" />
+
+                                    <Image Source="{Binding Image}" Grid.Column="1" Margin="5"
+                                           VerticalOptions="Center" HorizontalOptions="Center" />
+
+                                    <Label Text="{Binding FullName}" Grid.Column="2" TextColor="DarkGray"
+                                           FontFamily="{StaticResource PoppinsSemiBoldFont}" FontAttributes="None"
+                                           Style="{StaticResource LabelStyle}" FontSize="16" 
+                                           HorizontalTextAlignment="Start" /> 
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.Footer>
+                        <Frame BackgroundColor="#1774eb" CornerRadius="30" HasShadow="True" 
+                               WidthRequest="15" HeightRequest="15" Margin="0,5,10,10"
+                               VerticalOptions="End" HorizontalOptions="End">
+                            <Image Source="ic_add" HeightRequest="15" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AddCommand}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </ListView.Footer>
+
+                </ListView>
 
             </Grid>
         </ScrollView>

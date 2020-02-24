@@ -38,6 +38,7 @@ namespace Homework04
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<SignupPage, SignupPageViewModel>();
             containerRegistry.RegisterForNavigation<ContactPage, ContactPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddEditContactPage, AddEditContactPageViewModel>();
             containerRegistry.RegisterForNavigation<DiscoveryPage, DiscoveryPageViewModel>();
 
         }

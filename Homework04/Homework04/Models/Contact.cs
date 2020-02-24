@@ -17,12 +17,20 @@ namespace Homework04.Models
         public string Email { get; set; }
         public string TypeEmail { get; set; }
 
-        public Contact(int id, string category, string image, string firstName)
+        public string FullName { get { return $" {this.FirstName} {this.LastName}"; } }
+
+        public Contact(int id, string category, string image, string firstName, string lastName, string company, string phone, string typePhone, string email, string typeEmail)
         {
             ID = id;
             Category = category;
             Image = image;
             FirstName = firstName;
+            LastName = lastName;
+            Company = company;
+            Phone = phone;
+            TypePhone = typePhone;
+            Email = email;
+            TypeEmail = typeEmail;
         }
     }
 }
