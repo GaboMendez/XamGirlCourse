@@ -19,6 +19,8 @@ namespace Homework04.Models
 
         public string FullName { get { return $" {this.FirstName} {this.LastName}"; } }
 
+        public Contact() { }
+
         public Contact(int id, string category, string image, string firstName, string lastName, string company, string phone, string typePhone, string email, string typeEmail)
         {
             ID = id;

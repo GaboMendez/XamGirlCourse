@@ -33,6 +33,9 @@
     <!-- Change Back Button -->
     <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
 
+    <!-- Change Bar Color on Context Action -->
+    <item name="android:actionModeBackground">@color/primaryDark</item>
+
     <!--Change color of ToolBarItem -->
     <item name="android:actionMenuTextColor">#1e74d9</item>
     <item name="actionOverflowButtonStyle">@style/DotsDarkTheme</item>

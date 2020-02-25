@@ -32,8 +32,6 @@ namespace Homework04.ViewModels
         // Commands
         public DelegateCommand AddCommand { get; set; }
 
- 
-
         public ContactPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
@@ -42,8 +40,6 @@ namespace Homework04.ViewModels
 
             AddCommand = new DelegateCommand(async () => { await Add(); });
         }
-
-      
 
         private ObservableCollection<Contact> GetContacts()
         {
@@ -80,6 +76,16 @@ namespace Homework04.ViewModels
                 await NavigationService.NavigateAsync(new Uri($"/{Constants.AddOrEdit}", UriKind.Relative));
 
                 CanExecute = true;
+            }
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            base.OnNavigatedTo(parameters);
+            if (parameters.ContainsKey("Contact"))
+            {
+                var contact = (Contact)parameters["Contact"];
+                Contacts.Add(contact);
             }
         }
     }

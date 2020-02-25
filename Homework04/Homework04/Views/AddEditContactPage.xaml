@@ -4,21 +4,159 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" Title="{Binding Title}"
-             BackgroundColor="#f2f2f4"
+             BackgroundColor="White"
              x:Class="Homework04.Views.AddEditContactPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save" Order="Primary" Priority="0" Command="{Binding .}" />
+        <ToolbarItem Text="Save" Order="Primary" Priority="0" Command="{Binding SaveCommand}" />
         <ToolbarItem Text="Other Option" Order="Secondary" Priority="1" Command="{Binding .}" />
         <ToolbarItem Text="Other Option" Order="Secondary" Priority="2" Command="{Binding .}" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+
+            <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <ColumnDefinition Width="4*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--Row 0-->
+                <Grid BackgroundColor="LightGray" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="8*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Save to" Grid.Column="0" TextColor="#373737"
+                           Style="{StaticResource LabelStyle}" FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                           FontSize="14" VerticalOptions="Center"
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+
+                    <Frame Grid.Column="1" Style="{StaticResource FrameEntry}"
+                           HeightRequest="35" CornerRadius="25"  Margin="-5,10,50,10"
+                           BackgroundColor="White" BorderColor="White" >
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="ic_user" Margin="5"
+                                   VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Label Text="gabomendez16@gmail.com" TextColor="Black" Margin="-5,0,0,0"
+                                   FontFamily="{StaticResource PoppinsSemiBoldFont}" Style="{StaticResource LabelStyle}" 
+                                   FontSize="13" HorizontalTextAlignment="Start" />
+                        </StackLayout>
+                    </Frame> 
+                </Grid>
+
+                <!--Row 1-->
+                <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" 
+                       CornerRadius="50" Padding="-5"
+                       VerticalOptions="Center" HorizontalOptions="Center"
+                       BackgroundColor="White"  BorderColor="Gray" >
+                    <Image Source="{Binding Image}" HeightRequest="100" 
+                           VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PictureCommand}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <!--Row 2-->
+                <Image Source="ic_profile" Grid.Row="2" Grid.Column="0" HeightRequest="25"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Entry Placeholder="First Name"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.FirstName}" />
+                <Image Source="ic_arrow" Grid.Row="2" Grid.Column="3" HeightRequest="20"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                <!--Row 3-->
+                <Entry Placeholder="Last Name"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.LastName}" />
+
+                <!--Row 4-->
+                <Image Source="ic_company" Grid.Row="4" Grid.Column="0" HeightRequest="25"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Entry Placeholder="Company"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.Company}" />
+
+                <!--Row 5-->
+                <Image Source="ic_phone" Grid.Row="5" Grid.Column="0" HeightRequest="25"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Entry Placeholder=" Phone"  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Keyboard="Numeric"
+                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.Phone}" />
+
+                <!--Row 6-->
+                <Grid Grid.Row="6" Grid.Column="1">
+                    <Picker TitleColor="Gray"
+                            Title="Phone Type"
+                            WidthRequest="150"
+                            HorizontalOptions="Start"
+                            SelectedItem="{Binding NewContact.TypePhone}"
+                            FontSize="19"
+                            Margin="0,0">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Mobile</x:String>
+                                <x:String>Home</x:String>
+                                <x:String>Work</x:String>
+                                <x:String>Other</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Image Source="ic_arrow" HeightRequest="15" Margin="5"
+                           VerticalOptions="Center" HorizontalOptions="End"/>
+                </Grid>
+
+                <!--Row 7-->
+                <Image Source="ic_email" Grid.Row="7" Grid.Column="0" HeightRequest="25"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Entry Placeholder="Email"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Keyboard="Email"
+                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.Email}" />
+
+                <!--Row 8-->
+                <Grid Grid.Row="8" Grid.Column="1">
+                    <Picker TitleColor="Gray"
+                            Title="Email Type"
+                            WidthRequest="150"
+                            HorizontalOptions="Start"
+                            SelectedItem="{Binding NewContact.TypeEmail}"
+                            FontSize="19"
+                            Margin="0,0">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Home</x:String>
+                                <x:String>Work</x:String>
+                                <x:String>Other</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Image Source="ic_arrow" HeightRequest="15" Margin="5"
+                           VerticalOptions="Center" HorizontalOptions="End"/>
+                </Grid>
+
+                <!--Row 9-->
+                <Label Grid.Row="9" Grid.Column="1" Text="More Fields" 
+                       FontFamily="{StaticResource PoppinsSemiBoldFont}" FontAttributes="None"
+                       Style="{StaticResource LabelStyle}" FontSize="15" 
+                       HorizontalTextAlignment="Start" TextColor="#1e74d9"/>
+            </Grid>
+
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

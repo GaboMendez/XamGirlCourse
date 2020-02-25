@@ -43,7 +43,7 @@
                     </Grid>
                 </Frame>
 
-                <ListView Margin="0,80,0,0" x:Name="ContactList"
+                <ListView Margin="0,80,0,-100" x:Name="ContactList"
                           VerticalOptions="Start"
                           ItemsSource="{Binding Contacts}"
                           SelectedItem="{Binding selectedContact}"
