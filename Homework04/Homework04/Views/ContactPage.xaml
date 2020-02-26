@@ -11,7 +11,7 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+            <StackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
 
                 <Frame Margin="20,20,20,0" VerticalOptions="Start"
                        Style="{StaticResource FrameEntry}" HeightRequest="55" >
@@ -43,8 +43,7 @@
                     </Grid>
                 </Frame>
 
-                <ListView Margin="0,80,0,-100" x:Name="ContactList"
-                          VerticalOptions="Start"
+                <ListView Margin="0" x:Name="ContactList"
                           ItemsSource="{Binding Contacts}"
                           SelectedItem="{Binding selectedContact}"
                           HasUnevenRows="True">
@@ -94,11 +93,12 @@
                                 <TapGestureRecognizer Command="{Binding AddCommand}"/>
                             </Frame.GestureRecognizers>
                         </Frame>
+
                     </ListView.Footer>
 
                 </ListView>
 
-            </Grid>
+            </StackLayout>
         </ScrollView>
       
     </ContentPage.Content>

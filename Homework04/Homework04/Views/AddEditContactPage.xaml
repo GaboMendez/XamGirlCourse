@@ -50,7 +50,7 @@
                            HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
 
                     <Frame Grid.Column="1" Style="{StaticResource FrameEntry}"
-                           HeightRequest="35" CornerRadius="25"  Margin="-5,10,50,10"
+                           HeightRequest="35" CornerRadius="25"  Margin="-5,10,35,10"
                            BackgroundColor="White" BorderColor="White" >
                         <StackLayout Orientation="Horizontal">
                             <Image Source="ic_user" Margin="5"
@@ -58,6 +58,8 @@
                             <Label Text="gabomendez16@gmail.com" TextColor="Black" Margin="-5,0,0,0"
                                    FontFamily="{StaticResource PoppinsSemiBoldFont}" Style="{StaticResource LabelStyle}" 
                                    FontSize="13" HorizontalTextAlignment="Start" />
+                            <Image Source="ic_arrow" HeightRequest="15" Margin="0,0,5,0"
+                                   VerticalOptions="Center" HorizontalOptions="Start"/>
                         </StackLayout>
                     </Frame> 
                 </Grid>
@@ -78,25 +80,25 @@
                 <Image Source="ic_profile" Grid.Row="2" Grid.Column="0" HeightRequest="25"
                        VerticalOptions="Center" HorizontalOptions="Center"/>
                 <Entry Placeholder="First Name"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
-                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.FirstName}" />
+                       Style="{StaticResource EntryStyle}"  Text="{Binding Contact.FirstName}" />
                 <Image Source="ic_arrow" Grid.Row="2" Grid.Column="3" HeightRequest="20"
                        VerticalOptions="Center" HorizontalOptions="Center"/>
 
                 <!--Row 3-->
                 <Entry Placeholder="Last Name"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
-                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.LastName}" />
+                       Style="{StaticResource EntryStyle}"  Text="{Binding Contact.LastName}" />
 
                 <!--Row 4-->
                 <Image Source="ic_company" Grid.Row="4" Grid.Column="0" HeightRequest="25"
                        VerticalOptions="Center" HorizontalOptions="Center"/>
                 <Entry Placeholder="Company"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
-                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.Company}" />
+                       Style="{StaticResource EntryStyle}"  Text="{Binding Contact.Company}" />
 
                 <!--Row 5-->
                 <Image Source="ic_phone" Grid.Row="5" Grid.Column="0" HeightRequest="25"
                        VerticalOptions="Center" HorizontalOptions="Center"/>
                 <Entry Placeholder=" Phone"  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Keyboard="Numeric"
-                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.Phone}" />
+                       Style="{StaticResource EntryStyle}"  Text="{Binding Contact.Phone}" />
 
                 <!--Row 6-->
                 <Grid Grid.Row="6" Grid.Column="1">
@@ -104,7 +106,7 @@
                             Title="Phone Type"
                             WidthRequest="150"
                             HorizontalOptions="Start"
-                            SelectedItem="{Binding NewContact.TypePhone}"
+                            SelectedItem="{Binding Contact.TypePhone}"
                             FontSize="19"
                             Margin="0,0">
                         <Picker.ItemsSource>
@@ -125,7 +127,7 @@
                 <Image Source="ic_email" Grid.Row="7" Grid.Column="0" HeightRequest="25"
                        VerticalOptions="Center" HorizontalOptions="Center"/>
                 <Entry Placeholder="Email"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Keyboard="Email"
-                       Style="{StaticResource EntryStyle}"  Text="{Binding NewContact.Email}" />
+                       Style="{StaticResource EntryStyle}"  Text="{Binding Contact.Email}" />
 
                 <!--Row 8-->
                 <Grid Grid.Row="8" Grid.Column="1">
@@ -133,7 +135,7 @@
                             Title="Email Type"
                             WidthRequest="150"
                             HorizontalOptions="Start"
-                            SelectedItem="{Binding NewContact.TypeEmail}"
+                            SelectedItem="{Binding Contact.TypeEmail}"
                             FontSize="19"
                             Margin="0,0">
                         <Picker.ItemsSource>

@@ -16,7 +16,7 @@ namespace Homework04.ViewModels
         // Properties
         public bool Edit { get; set; } = false;
         public string Image { get; set; }
-        public Contact NewContact { get; set; }
+        public Contact Contact { get; set; }
 
         // Commands
         public DelegateCommand SaveCommand { get; set; }
@@ -25,7 +25,6 @@ namespace Homework04.ViewModels
         public AddEditContactPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
-            NewContact = new Contact();
             Title = "Create Contact";
             Image = "ic_picture";
 
@@ -35,23 +34,39 @@ namespace Homework04.ViewModels
 
         private async Task Save()
         {
-            if (String.IsNullOrEmpty(NewContact.FirstName) || String.IsNullOrEmpty(NewContact.LastName) || String.IsNullOrEmpty(NewContact.Company) || 
-                String.IsNullOrEmpty(NewContact.Phone) || String.IsNullOrEmpty(NewContact.TypePhone) || String.IsNullOrEmpty(NewContact.Email) || String.IsNullOrEmpty(NewContact.TypeEmail))
+            if (String.IsNullOrEmpty(Contact.FirstName) || String.IsNullOrEmpty(Contact.LastName) || String.IsNullOrEmpty(Contact.Company) || 
+                String.IsNullOrEmpty(Contact.Phone) || String.IsNullOrEmpty(Contact.TypePhone) || String.IsNullOrEmpty(Contact.Email) || String.IsNullOrEmpty(Contact.TypeEmail))
             {
                 await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
             }
             else
             {
-                NewContact.Image = Image.Equals("ic_picture") ? "ic_default" : Image;
-                NewContact.Category = "ic_common";
-
-                var contactParameters = new NavigationParameters
+                if (Edit)
                 {
-                    { "Contact", NewContact },
-                    { "New", true }
-                };
+                    Contact.Image = Image.Equals("ic_picture") ? "ic_default" : Image;
 
-                await NavigationService.GoBackAsync(contactParameters);
+                    var contactParameters = new NavigationParameters
+                    {
+                        { "Contact", Contact },
+                        { "New", false }
+                    };
+
+                    await NavigationService.GoBackAsync(contactParameters);
+                }
+                else
+                {
+                    Contact.Image = Image.Equals("ic_picture") ? "ic_default" : Image;
+                    Contact.Category = "ic_common";
+
+                    var contactParameters = new NavigationParameters
+                    {
+                        { "Contact", Contact },
+                        { "New", true }
+                    };
+
+                    await NavigationService.GoBackAsync(contactParameters);
+                }
+               
             }
         }
         
@@ -80,8 +95,8 @@ namespace Homework04.ViewModels
                         if (file == null)
                             return;
 
-                        NewContact.Image = file.Path;
-                        Image = NewContact.Image;
+                        Contact.Image = file.Path;
+                        Image = Contact.Image;
                     }
                     catch (Exception ex)
                     {
@@ -104,8 +119,8 @@ namespace Homework04.ViewModels
                         if (file == null)
                             return;
 
-                        NewContact.Image = file.Path;
-                        Image = NewContact.Image;
+                        Contact.Image = file.Path;
+                        Image = Contact.Image;
                     }
                     catch (Exception ex)
                     {
@@ -123,10 +138,13 @@ namespace Homework04.ViewModels
             base.Initialize(parameters);
             if (parameters.ContainsKey("EditContact"))
             {
-                NewContact = (Contact)parameters["EditContact"];
-                Image = NewContact.Image;
+                Title = "Update Contact";
+                Contact = (Contact)parameters["EditContact"];
+                Image = Contact.Image;
                 Edit = true;
-            }
+            }else
+                Contact = new Contact();
+
         }
     }
 }

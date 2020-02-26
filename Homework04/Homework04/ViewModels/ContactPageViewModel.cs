@@ -126,10 +126,19 @@ namespace Homework04.ViewModels
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
-            if (parameters.ContainsKey("Contact"))
+            if (parameters.ContainsKey("Contact") && parameters.ContainsKey("New"))
             {
-                var contact = (Contact)parameters["Contact"];
-                Contacts.Add(contact);
+                var newContact = (bool) parameters["New"];
+                var contact = (Contact) parameters["Contact"];
+
+                if (newContact)
+                {
+                    Contacts.Add(contact);
+                }
+                else
+                {
+                    Contacts[contact.ID] = contact;
+                }
             }
         }
     }
