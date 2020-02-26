@@ -64,10 +64,10 @@
 
                 <!--Row 1-->
                 <Frame Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" 
-                       CornerRadius="50" Padding="-5"
+                       CornerRadius="50" Padding="-10"
                        VerticalOptions="Center" HorizontalOptions="Center"
                        BackgroundColor="White"  BorderColor="Gray" >
-                    <Image Source="{Binding Image}" HeightRequest="100" 
+                    <Image Source="{Binding Image}" HeightRequest="120" WidthRequest="120"
                            VerticalOptions="Center" HorizontalOptions="Center"/>
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding PictureCommand}"></TapGestureRecognizer>

@@ -52,14 +52,14 @@ namespace Homework04.ViewModels
         {
             var ret = new ObservableCollection<Contact>
             {
-                new Contact(0, "ic_star", "ic_initialA", "Abril", "Martinez", "Claro", "809-312-4578", "Mobile", "abril@hotmail.com", "Personal" ),
-                new Contact(1, null, "ic_initialF", "Francis", "Mendez", "INTEC", "809-456-7895", "Home", "francis@hotmail.com", "Work"),
-                new Contact(2, null, "ic_initialH", "Hecmanuel", "Taveraz", "KFC", "809-789-4562", "Work", "hecmanuel@hotmail.com", "Other"),
-                new Contact(3, "ic_fontA", "ic_initialA", "Anabelle", "Herrera", "La Cadena", "829-456-8978", "Mobile", "anabelle@gmail.com", "Personal"),
-                new Contact(4, null, "ic_initialA", "Ana Maria", "Mercedez", "PiTech", "829-456-7812", "Mobile", "ana@hotmail.com", "Work"),
-                new Contact(5, null, "ic_initialA", "Abril", "Aquino", "Bravo", "809-456-8978", "Home", "abril@hotmail.com", "Personal"),
-                new Contact(6, null, "ic_initialA", "Adriana", "Ruiz", "Altice", "809-123-5689", "Other", "adriana@hotmail.com", "Personal"),
-                new Contact(7, null, "ic_initialA", "Alberto", "Morillo", "Viva", "829-567-1236", "Mobile", "alberto@gmail.com", "Work")
+                new Contact("ic_star", "ic_initialA", "Abril", "Martinez", "Claro", "809-312-4578", "Mobile", "abril@hotmail.com", "Personal" ),
+                new Contact(null, "ic_initialF", "Francis", "Mendez", "INTEC", "809-456-7895", "Home", "francis@hotmail.com", "Work"),
+                new Contact(null, "ic_initialH", "Hecmanuel", "Taveraz", "KFC", "809-789-4562", "Work", "hecmanuel@hotmail.com", "Other"),
+                new Contact("ic_fontA", "ic_initialA", "Anabelle", "Herrera", "La Cadena", "829-456-8978", "Mobile", "anabelle@gmail.com", "Personal"),
+                new Contact(null, "ic_initialA", "Ana Maria", "Mercedez", "PiTech", "829-456-7812", "Mobile", "ana@hotmail.com", "Work"),
+                new Contact(null, "ic_initialA", "Abril", "Aquino", "Bravo", "809-456-8978", "Home", "abril@hotmail.com", "Personal"),
+                new Contact(null, "ic_initialA", "Adriana", "Ruiz", "Altice", "809-123-5689", "Other", "adriana@hotmail.com", "Personal"),
+                new Contact(null, "ic_initialA", "Alberto", "Morillo", "Viva", "829-567-1236", "Mobile", "alberto@gmail.com", "Work")
             };
 
             return ret;
@@ -99,13 +99,19 @@ namespace Homework04.ViewModels
         {
             var option01 = $"Call +{contact.Phone}";
             var option02 = "Update";
-            var actionSheet = await DialogService.DisplayActionSheetAsync("Actions", "Cancel", null,
-                                                                        option01, option02);
+
+            var actionSheet = await DialogService.DisplayActionSheetAsync("Select an Option", "Cancel", 
+                                                                                null, option01, option02);
+
             if (actionSheet.Equals(option01))
             {
-                PhoneDialer.Open(contact.Phone);
+                try { PhoneDialer.Open(contact.Phone); }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    await DialogService.DisplayAlertAsync("Phone Dialer is not supported on this device.", null, "Ok");
+                }
             }
-
             if (actionSheet.Equals(option02))
             {
                 var contactParameters = new NavigationParameters
