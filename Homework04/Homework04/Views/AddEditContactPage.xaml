@@ -138,7 +138,7 @@
                             Margin="0,0">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
-                                <x:String>Home</x:String>
+                                <x:String>Personal</x:String>
                                 <x:String>Work</x:String>
                                 <x:String>Other</x:String>
                             </x:Array>

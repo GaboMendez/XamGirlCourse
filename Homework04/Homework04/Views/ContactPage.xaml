@@ -53,11 +53,11 @@
                         <DataTemplate>
                             <ViewCell>
                                 <ViewCell.ContextActions>
-                                    <MenuItem Command="{Binding Path=BindingContext.UpdateEmployeeCommand, Source={x:Reference Name=ContactList}}"
+                                    <MenuItem Command="{Binding Path=BindingContext.MoreCommand, Source={x:Reference Name=ContactList}}"
                                               CommandParameter="{Binding .}"
-                                              Text="Update" />
+                                              Text="More" />
 
-                                    <MenuItem Command="{Binding Path=BindingContext.DeleteEmployeeCommand, Source={x:Reference Name=ContactList}}"
+                                    <MenuItem Command="{Binding Path=BindingContext.RemoveCommand, Source={x:Reference Name=ContactList}}"
                                               CommandParameter="{Binding .}"
                                               Text="Delete" 
                                               IsDestructive="True" />

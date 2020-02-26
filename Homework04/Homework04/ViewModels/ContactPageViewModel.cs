@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Homework04.Models;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Homework04.ViewModels
 {
@@ -31,6 +34,8 @@ namespace Homework04.ViewModels
 
         // Commands
         public DelegateCommand AddCommand { get; set; }
+        public DelegateCommand<Contact> RemoveCommand { get; set; }
+        public DelegateCommand<Contact> MoreCommand { get; set; }
 
         public ContactPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
@@ -39,6 +44,8 @@ namespace Homework04.ViewModels
             Contacts = GetContacts();
 
             AddCommand = new DelegateCommand(async () => { await Add(); });
+            RemoveCommand = new DelegateCommand<Contact>(async (contact) => { await Remove(contact); });
+            MoreCommand = new DelegateCommand<Contact>(async (contact) => { await More(contact); });
         }
 
         private ObservableCollection<Contact> GetContacts()
@@ -78,6 +85,37 @@ namespace Homework04.ViewModels
                 CanExecute = true;
             }
         }
+
+        private async Task Remove(Contact contact)
+        {
+            bool wantsDelete = await DialogService.DisplayAlertAsync("Are you sure you want \nto delete this Contact?", null, "Yes", "No");
+            if (wantsDelete)
+            {
+                Contacts.Remove(contact);
+            }
+        }
+
+        private async Task More(Contact contact)
+        {
+            var option01 = $"Call +{contact.Phone}";
+            var option02 = "Update";
+            var actionSheet = await DialogService.DisplayActionSheetAsync("Actions", "Cancel", null,
+                                                                        option01, option02);
+            if (actionSheet.Equals(option01))
+            {
+                PhoneDialer.Open(contact.Phone);
+            }
+
+            if (actionSheet.Equals(option02))
+            {
+                var contactParameters = new NavigationParameters
+                {
+                    { "EditContact", contact }
+                };
+                await NavigationService.NavigateAsync(new Uri($"/{Constants.AddOrEdit}", UriKind.Relative), contactParameters);
+            }
+        }
+
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {

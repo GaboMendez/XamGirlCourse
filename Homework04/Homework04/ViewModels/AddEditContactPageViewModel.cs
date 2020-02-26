@@ -50,5 +50,14 @@ namespace Homework04.ViewModels
                 await NavigationService.GoBackAsync(contactParameters);
             }
         }
+
+        public override void Initialize(INavigationParameters parameters)
+        {
+            base.Initialize(parameters);
+            if (parameters.ContainsKey("EditContact"))
+            {
+                NewContact = (Contact)parameters["EditContact"];
+            }
+        }
     }
 }
