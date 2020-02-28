@@ -27,6 +27,7 @@ namespace Homework04.Droid
             base.OnCreate(bundle);
             CrossCurrentActivity.Current.Init(this, bundle); 
             Xamarin.Essentials.Platform.Init(this, bundle);
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
             RequestPermissions(PermissionsLocation, RequestId);
 

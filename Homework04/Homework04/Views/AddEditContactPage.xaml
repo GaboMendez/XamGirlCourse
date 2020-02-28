@@ -50,7 +50,8 @@
                            HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
 
                     <Frame Grid.Column="1" Style="{StaticResource FrameEntry}"
-                           HeightRequest="35" CornerRadius="25"  Margin="-5,10,35,10"
+                           HeightRequest="35" CornerRadius="25"  
+                           HorizontalOptions="Center" Margin="-50,0,0,0"
                            BackgroundColor="White" BorderColor="White" >
                         <StackLayout Orientation="Horizontal">
                             <Image Source="ic_user" Margin="5"
@@ -58,7 +59,7 @@
                             <Label Text="gabomendez16@gmail.com" TextColor="Black" Margin="-5,0,0,0"
                                    FontFamily="{StaticResource PoppinsSemiBoldFont}" Style="{StaticResource LabelStyle}" 
                                    FontSize="13" HorizontalTextAlignment="Start" />
-                            <Image Source="ic_arrow" HeightRequest="15" Margin="0,0,5,0"
+                            <Image Source="ic_arrow" HeightRequest="12" Margin="0,0,10,0"
                                    VerticalOptions="Center" HorizontalOptions="Start"/>
                         </StackLayout>
                     </Frame> 
@@ -104,7 +105,7 @@
                 <Grid Grid.Row="6" Grid.Column="1">
                     <Picker TitleColor="Gray"
                             Title="Phone Type"
-                            WidthRequest="150"
+                            WidthRequest="180"
                             HorizontalOptions="Start"
                             SelectedItem="{Binding Contact.TypePhone}"
                             FontSize="19"
@@ -133,7 +134,7 @@
                 <Grid Grid.Row="8" Grid.Column="1">
                     <Picker TitleColor="Gray"
                             Title="Email Type"
-                            WidthRequest="150"
+                            WidthRequest="180"
                             HorizontalOptions="Start"
                             SelectedItem="{Binding Contact.TypeEmail}"
                             FontSize="19"

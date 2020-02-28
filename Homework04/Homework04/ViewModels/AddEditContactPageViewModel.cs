@@ -94,7 +94,7 @@ namespace Homework04.ViewModels
 
                         if (file == null)
                             return;
-
+                        
                         Contact.Image = file.Path;
                         Image = Contact.Image;
                     }

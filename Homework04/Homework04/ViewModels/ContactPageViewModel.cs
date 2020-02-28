@@ -10,6 +10,7 @@ using Prism.Navigation;
 using Prism.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using ZXing.Net.Mobile.Forms;
 
 namespace Homework04.ViewModels
 {
@@ -34,6 +35,7 @@ namespace Homework04.ViewModels
 
         // Commands
         public DelegateCommand AddCommand { get; set; }
+        public DelegateCommand QRCommand { get; set; }
         public DelegateCommand<Contact> RemoveCommand { get; set; }
         public DelegateCommand<Contact> MoreCommand { get; set; }
 
@@ -44,10 +46,12 @@ namespace Homework04.ViewModels
             Contacts = GetContacts();
 
             AddCommand = new DelegateCommand(async () => { await Add(); });
+            QRCommand = new DelegateCommand(async () => { await CodeQR(); });
             RemoveCommand = new DelegateCommand<Contact>(async (contact) => { await Remove(contact); });
             MoreCommand = new DelegateCommand<Contact>(async (contact) => { await More(contact); });
         }
 
+     
         private ObservableCollection<Contact> GetContacts()
         {
             var ret = new ObservableCollection<Contact>
@@ -61,7 +65,6 @@ namespace Homework04.ViewModels
                 new Contact(null, "ic_initialA", "Adriana", "Ruiz", "Altice", "809-123-5689", "Other", "adriana@hotmail.com", "Personal"),
                 new Contact(null, "ic_initialA", "Alberto", "Morillo", "Viva", "829-567-1236", "Mobile", "alberto@gmail.com", "Work")
             };
-
             return ret;
         }
 
@@ -84,6 +87,34 @@ namespace Homework04.ViewModels
 
                 CanExecute = true;
             }
+        }
+        private async Task CodeQR()
+        {
+            try
+            {
+                var ScannerPage = new ZXingScannerPage();
+                await App.Current.MainPage.Navigation.PushAsync(ScannerPage);
+
+                ScannerPage.OnScanResult += (result) =>
+                {
+                    ScannerPage.IsScanning = false;
+
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await App.Current.MainPage.Navigation.PopAsync();
+                        var NewContact = result.Text.Split('*');
+                        Contacts.Add(new Contact(NewContact[0], NewContact[1], NewContact[2], "ic_common", "ic_default"));
+                        await DialogService.DisplayAlertAsync($"{NewContact[0]} {NewContact[1]}", "Your contact has been \nsuccessfully created", "Ok");
+                    });
+                };
+
+
+            }
+            catch (Exception ex)
+            {
+                await DialogService.DisplayAlertAsync("Error!", ex.Message, "Ok");
+            }
+          
         }
 
         private async Task Remove(Contact contact)

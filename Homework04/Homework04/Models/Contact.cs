@@ -26,6 +26,16 @@ namespace Homework04.Models
             ID = Interlocked.Increment(ref GlobalContactID);
         }
 
+        public Contact(string firstName, string lastName, string phone,string category, string image)
+        {
+            ID = Interlocked.Increment(ref GlobalContactID);
+            FirstName = firstName;
+            LastName = lastName;
+            Phone = phone;
+            Category = category;
+            Image = image;
+        }
+
         public Contact(string category, string image, string firstName, string lastName, string company, string phone, string typePhone, string email, string typeEmail)
         {
             ID = Interlocked.Increment(ref GlobalContactID);

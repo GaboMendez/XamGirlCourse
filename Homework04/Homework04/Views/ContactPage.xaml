@@ -11,7 +11,7 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout VerticalOptions="Fill" HorizontalOptions="Fill">
+            <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
 
                 <Frame Margin="20,20,20,0" VerticalOptions="Start"
                        Style="{StaticResource FrameEntry}" HeightRequest="55" >
@@ -43,7 +43,10 @@
                     </Grid>
                 </Frame>
 
-                <ListView Margin="0" x:Name="ContactList"
+                <ListView x:Name="ContactList" 
+                          HeightRequest="0"
+                          HorizontalOptions="FillAndExpand" 
+                          VerticalOptions="Fill" Margin="0,80,0,0"
                           ItemsSource="{Binding Contacts}"
                           SelectedItem="{Binding selectedContact}"
                           HasUnevenRows="True">
@@ -84,21 +87,29 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
 
-                    <ListView.Footer>
-                        <Frame BackgroundColor="#1774eb" CornerRadius="30" HasShadow="True" 
-                               WidthRequest="15" HeightRequest="15" Margin="0,5,10,10"
-                               VerticalOptions="End" HorizontalOptions="End">
-                            <Image Source="ic_add" HeightRequest="15" VerticalOptions="Center" HorizontalOptions="Center" />
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding AddCommand}"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-
-                    </ListView.Footer>
 
                 </ListView>
 
-            </StackLayout>
+                <Frame  BackgroundColor="#1774eb" CornerRadius="30" HasShadow="True" 
+                        WidthRequest="20" HeightRequest="20" Margin="0,0,10,10"
+                        VerticalOptions="End" HorizontalOptions="End">
+                    <Image Source="ic_add" Margin="0" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame  BackgroundColor="#1774eb" 
+                        CornerRadius="30" HasShadow="True" 
+                        WidthRequest="20" HeightRequest="20" Margin="0,90,10,10"
+                        VerticalOptions="Start" HorizontalOptions="End">
+                    <Image Source="ic_code" Margin="-10" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding QRCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+            </Grid>
         </ScrollView>
       
     </ContentPage.Content>
