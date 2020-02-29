@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Homework04.Models;
+using MonkeyCache.FileStore;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
@@ -44,6 +45,7 @@ namespace Homework04.ViewModels
         {
             Title = "Contact";
             Contacts = GetContacts();
+            //Barrel.ApplicationId = "AllUsers";
 
             AddCommand = new DelegateCommand(async () => { await Add(); });
             QRCommand = new DelegateCommand(async () => { await CodeQR(); });
@@ -153,6 +155,11 @@ namespace Homework04.ViewModels
             }
         }
 
+        private async Task UpdateList(int userID, ObservableCollection<Contact> contacts)
+        {
+            await Task.Delay(100);
+
+        }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
@@ -163,14 +170,16 @@ namespace Homework04.ViewModels
                 var contact = (Contact) parameters["Contact"];
 
                 if (newContact)
-                {
                     Contacts.Add(contact);
-                }
                 else
-                {
                     Contacts[contact.ID] = contact;
-                }
+
             }
+
+            if (parameters.ContainsKey("User"))
+                User = (User)parameters["User"];
+
         }
+
     }
 }

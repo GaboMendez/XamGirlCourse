@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Homework04.Models;
+using MonkeyCache.FileStore;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
+using Xamarin.Essentials;
 
 namespace Homework04.ViewModels
 {
@@ -27,6 +29,7 @@ namespace Homework04.ViewModels
             : base(navigationService, pageDialogService)
         {
             NewUser = new User();
+            //Barrel.ApplicationId = "AllUsers";
 
             SignupCommand = new DelegateCommand(async () => { await Signup(); });
 
@@ -63,9 +66,24 @@ namespace Homework04.ViewModels
                 {
                     if (NewUser.Password.Equals(NewUser.ConfirmPassword))
                     {
-                        // Navigate to Home
-                        await Task.Delay(400);
-                        await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Contact}", UriKind.Absolute));
+                        var value = await SecureStorage.GetAsync(NewUser.Username);
+                        if (value != null) 
+                            await DialogService.DisplayAlertAsync("Sorry...", "This Username is Already Taken! \nTry Again!", "Ok");
+                        else
+                        {
+                            // Navigate to Home
+                            await SecureStorage.SetAsync(NewUser.Username, NewUser.Password);
+                            NewUser = new User(NewUser.Email, NewUser.Username);
+                            Barrel.Current.Add(key: NewUser.Username, data: NewUser, expireIn: TimeSpan.FromDays(7));
+
+                            var userParameters = new NavigationParameters
+                            {
+                                { "User", NewUser }
+                            };
+                            await Task.Delay(200);
+                            await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Contact}", UriKind.Absolute), userParameters);
+                        }
+                      
                     }
                     else
                         await DialogService.DisplayAlertAsync("Passwords do not match! \nTry again!", null, "Ok");

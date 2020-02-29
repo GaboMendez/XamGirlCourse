@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Homework04.Models;
+using MonkeyCache.FileStore;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
+using Xamarin.Essentials;
 
 namespace Homework04.ViewModels
 {
@@ -46,8 +48,23 @@ namespace Homework04.ViewModels
                 else
                 {
                     // Navigate to Home
-                    await Task.Delay(400);
-                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Contact}", UriKind.Absolute));
+                    var password = await SecureStorage.GetAsync(ActualUser.Username);
+                    if (password != null)
+                    {
+                        if (password.Equals(ActualUser.Password))
+                        {
+                            var User = Barrel.Current.Get<User>(key: ActualUser.Username);
+                            var userParameters = new NavigationParameters
+                            {
+                                { "User", User }
+                            };
+                            await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Contact}", UriKind.Absolute), userParameters);
+
+                        }
+                        else
+                            await DialogService.DisplayAlertAsync("Invalid Login Credentials! Try again!", null, "Ok");
+                    }else
+                        await DialogService.DisplayAlertAsync("Invalid Login Credentials! Try again!", null, "Ok");
                 }
 
                 CanExecute = true;
@@ -64,6 +81,16 @@ namespace Homework04.ViewModels
 
                 CanExecute = true;
             }
+        }
+
+        public override void Initialize(INavigationParameters parameters)
+        {
+            base.Initialize(parameters);
+            if (Barrel.ApplicationId.Equals(""))
+            {
+                Barrel.ApplicationId = "AllUsers";
+            }
+            User = null;
         }
     }
 }
