@@ -105,8 +105,15 @@ namespace Homework04.ViewModels
                     {
                         await App.Current.MainPage.Navigation.PopAsync();
                         var NewContact = result.Text.Split('*');
-                        Contacts.Add(new Contact(NewContact[0], NewContact[1], NewContact[2], "ic_common", "ic_default"));
-                        await DialogService.DisplayAlertAsync($"{NewContact[0]} {NewContact[1]}", "Your contact has been \nsuccessfully created", "Ok");
+                        if (NewContact.Length > 2)
+                        {
+                            Contacts.Add(new Contact(NewContact[0], NewContact[1], NewContact[2], "ic_common", "ic_default"));
+                            await DialogService.DisplayAlertAsync($"{NewContact[0]} {NewContact[1]}", "Your contact has been \nsuccessfully created", "Ok");
+                            UpdateContacts(User.ID, Contacts);
+                        }
+                        else
+                            await DialogService.DisplayAlertAsync("Invalid QR Code!", null, "Ok");
+                       
                     });
                 };
 
