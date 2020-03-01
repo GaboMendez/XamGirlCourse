@@ -48,23 +48,28 @@ namespace Homework04.ViewModels
                 else
                 {
                     // Navigate to Home
-                    var password = await SecureStorage.GetAsync(ActualUser.Username);
+                    var password = await SecureStorage.GetAsync(ActualUser.Username.ToLower());
                     if (password != null)
                     {
                         if (password.Equals(ActualUser.Password))
                         {
-                            var User = Barrel.Current.Get<User>(key: ActualUser.Username);
-                            var userParameters = new NavigationParameters
-                            {
-                                { "User", User }
-                            };
-                            await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Contact}", UriKind.Absolute), userParameters);
+                            var User = Barrel.Current.Get<User>(key: ActualUser.Username.ToLower());
+                            if (User != null)
+                            {         
+                                
+                                var userParameters = new NavigationParameters
+                                {
+                                    { "User", User }
+                                };
+                                await Task.Delay(200);
+                                await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Contact}", UriKind.Absolute), userParameters);
 
-                        }
-                        else
-                            await DialogService.DisplayAlertAsync("Invalid Login Credentials! Try again!", null, "Ok");
+                            }else
+                                await DialogService.DisplayAlertAsync("Invalid Login Credentials! \nTry again!", null, "Ok");
+                        }else
+                            await DialogService.DisplayAlertAsync("Invalid Login Credentials! \nTry again!", null, "Ok");
                     }else
-                        await DialogService.DisplayAlertAsync("Invalid Login Credentials! Try again!", null, "Ok");
+                        await DialogService.DisplayAlertAsync("Invalid Login Credentials! \nTry again!", null, "Ok");
                 }
 
                 CanExecute = true;
@@ -91,6 +96,10 @@ namespace Homework04.ViewModels
                 Barrel.ApplicationId = "AllUsers";
             }
             User = null;
+
+            //Preferences.Clear();
+            //Barrel.Current.EmptyAll();
+            //SecureStorage.RemoveAll();
         }
     }
 }

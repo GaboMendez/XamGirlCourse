@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -44,8 +45,6 @@ namespace Homework04.ViewModels
             : base(navigationService, pageDialogService)
         {
             Title = "Contact";
-            Contacts = GetContacts();
-            //Barrel.ApplicationId = "AllUsers";
 
             AddCommand = new DelegateCommand(async () => { await Add(); });
             QRCommand = new DelegateCommand(async () => { await CodeQR(); });
@@ -58,7 +57,7 @@ namespace Homework04.ViewModels
         {
             var ret = new ObservableCollection<Contact>
             {
-                new Contact("ic_star", "ic_initialA", "Abril", "Martinez", "Claro", "809-312-4578", "Mobile", "abril@hotmail.com", "Personal" ),
+                new Contact("ic_star", "ic_initialA", "Abril", "Martinez", "Claro", "809-312-4578", "Mobile", "abril@hotmail.com", "Personal"),
                 new Contact(    null, "ic_initialF", "Francis", "Mendez", "INTEC", "809-456-7895", "Home", "francis@hotmail.com", "Work"),
                 new Contact(    null, "ic_initialH", "Hecmanuel", "Taveraz", "KFC", "809-789-4562", "Work", "hecmanuel@hotmail.com", "Other"),
                 new Contact("ic_fontA", "ic_initialA", "Anabelle", "Herrera", "La Cadena", "829-456-8978", "Mobile", "anabelle@gmail.com", "Personal"),
@@ -67,6 +66,7 @@ namespace Homework04.ViewModels
                 new Contact(    null, "ic_initialA", "Adriana", "Ruiz", "Altice", "809-123-5689", "Other", "adriana@hotmail.com", "Personal"),
                 new Contact(    null, "ic_initialA", "Alberto", "Morillo", "Viva", "829-567-1236", "Mobile", "alberto@gmail.com", "Work")
             };
+
             return ret;
         }
 
@@ -125,6 +125,7 @@ namespace Homework04.ViewModels
             if (wantsDelete)
             {
                 Contacts.Remove(contact);
+                UpdateContacts(User.ID, Contacts);
             }
         }
 
@@ -155,12 +156,10 @@ namespace Homework04.ViewModels
             }
         }
 
-        private async Task UpdateList(int userID, ObservableCollection<Contact> contacts)
+        private void UpdateContacts(int userID, ObservableCollection<Contact> contacts)
         {
-            var w = Barrel.Current.Get<ObservableCollection<Contact>>(key: userID.ToString());
-
-            await Task.Delay(100);
-
+            Barrel.Current.Empty(key: userID.ToString());
+            Barrel.Current.Add(key: userID.ToString(), data: contacts, expireIn: TimeSpan.FromDays(7));
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
@@ -173,14 +172,23 @@ namespace Homework04.ViewModels
 
                 if (newContact)
                     Contacts.Add(contact);
-                else
-                    Contacts[contact.ID] = contact;
-
+               
+                UpdateContacts(User.ID, Contacts);
             }
 
             if (parameters.ContainsKey("User"))
+            {
                 User = (User)parameters["User"];
+                var UserContacts = Barrel.Current.Get<ObservableCollection<Contact>>(key: User.ID.ToString());
 
+                if (UserContacts != null)
+                    Contacts = UserContacts;
+                else
+                {
+                    Contacts = GetContacts();
+                    UpdateContacts(User.ID, Contacts);
+                }
+            }       
         }
 
     }

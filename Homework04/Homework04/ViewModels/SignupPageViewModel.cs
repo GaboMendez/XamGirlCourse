@@ -29,7 +29,6 @@ namespace Homework04.ViewModels
             : base(navigationService, pageDialogService)
         {
             NewUser = new User();
-            //Barrel.ApplicationId = "AllUsers";
 
             SignupCommand = new DelegateCommand(async () => { await Signup(); });
 
@@ -66,15 +65,16 @@ namespace Homework04.ViewModels
                 {
                     if (NewUser.Password.Equals(NewUser.ConfirmPassword))
                     {
-                        var value = await SecureStorage.GetAsync(NewUser.Username);
+                        var value = await SecureStorage.GetAsync(NewUser.Username.ToLower());
                         if (value != null) 
                             await DialogService.DisplayAlertAsync("Sorry...", "This Username is Already Taken! \nTry Again!", "Ok");
                         else
                         {
                             // Navigate to Home
-                            await SecureStorage.SetAsync(NewUser.Username, NewUser.Password);
+                            await SecureStorage.SetAsync(NewUser.Username.ToLower(), NewUser.Password);
                             NewUser = new User(NewUser.Email, NewUser.Username);
-                            Barrel.Current.Add(key: NewUser.Username, data: NewUser, expireIn: TimeSpan.FromDays(7));
+                            Barrel.Current.Add(key: "LastUserID", data: NewUser.ID, expireIn: TimeSpan.FromDays(7));
+                            Barrel.Current.Add(key: NewUser.Username.ToLower(), data: NewUser, expireIn: TimeSpan.FromDays(7));
 
                             var userParameters = new NavigationParameters
                             {
