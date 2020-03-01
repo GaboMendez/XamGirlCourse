@@ -1,5 +1,5 @@
 # Homework 02
-Make a contact agenda
+Make a Contact Agenda
 
 * This screen will contain a list of contacts.
 * To the right of the NavigationBar add an Add option.
@@ -19,7 +19,7 @@ Make a contact agenda
 ### EXTRA
 * Replicate the UI of the google contacts calendar:
 <p aling="center">
-<img src="/ScreenShots/Design03.JPG" width="30%" />
+<img src="/ScreenShots/Design03.JPG" width="50%" />
  </p>
  * Add photo support
  <p aling="center">
