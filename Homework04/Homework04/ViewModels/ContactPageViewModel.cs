@@ -59,13 +59,13 @@ namespace Homework04.ViewModels
             var ret = new ObservableCollection<Contact>
             {
                 new Contact("ic_star", "ic_initialA", "Abril", "Martinez", "Claro", "809-312-4578", "Mobile", "abril@hotmail.com", "Personal" ),
-                new Contact(null, "ic_initialF", "Francis", "Mendez", "INTEC", "809-456-7895", "Home", "francis@hotmail.com", "Work"),
-                new Contact(null, "ic_initialH", "Hecmanuel", "Taveraz", "KFC", "809-789-4562", "Work", "hecmanuel@hotmail.com", "Other"),
+                new Contact(    null, "ic_initialF", "Francis", "Mendez", "INTEC", "809-456-7895", "Home", "francis@hotmail.com", "Work"),
+                new Contact(    null, "ic_initialH", "Hecmanuel", "Taveraz", "KFC", "809-789-4562", "Work", "hecmanuel@hotmail.com", "Other"),
                 new Contact("ic_fontA", "ic_initialA", "Anabelle", "Herrera", "La Cadena", "829-456-8978", "Mobile", "anabelle@gmail.com", "Personal"),
-                new Contact(null, "ic_initialA", "Ana Maria", "Mercedez", "PiTech", "829-456-7812", "Mobile", "ana@hotmail.com", "Work"),
-                new Contact(null, "ic_initialA", "Abril", "Aquino", "Bravo", "809-456-8978", "Home", "abril@hotmail.com", "Personal"),
-                new Contact(null, "ic_initialA", "Adriana", "Ruiz", "Altice", "809-123-5689", "Other", "adriana@hotmail.com", "Personal"),
-                new Contact(null, "ic_initialA", "Alberto", "Morillo", "Viva", "829-567-1236", "Mobile", "alberto@gmail.com", "Work")
+                new Contact(    null, "ic_initialA", "Ana Maria", "Mercedez", "PiTech", "829-456-7812", "Mobile", "ana@hotmail.com", "Work"),
+                new Contact(    null, "ic_initialA", "Abril", "Aquino", "Bravo", "809-456-8978", "Home", "abril@hotmail.com", "Personal"),
+                new Contact(    null, "ic_initialA", "Adriana", "Ruiz", "Altice", "809-123-5689", "Other", "adriana@hotmail.com", "Personal"),
+                new Contact(    null, "ic_initialA", "Alberto", "Morillo", "Viva", "829-567-1236", "Mobile", "alberto@gmail.com", "Work")
             };
             return ret;
         }
@@ -130,13 +130,13 @@ namespace Homework04.ViewModels
 
         private async Task More(Contact contact)
         {
-            var option01 = $"Call +{contact.Phone}";
-            var option02 = "Update";
+            var call = $"Call +{contact.Phone}";
+            var update = "Update";
 
             var actionSheet = await DialogService.DisplayActionSheetAsync("Select an Option", "Cancel", 
-                                                                                null, option01, option02);
+                                                                                null, call, update);
 
-            if (actionSheet.Equals(option01))
+            if (actionSheet.Equals(call))
             {
                 try { PhoneDialer.Open(contact.Phone); }
                 catch (Exception e)
@@ -145,7 +145,7 @@ namespace Homework04.ViewModels
                     await DialogService.DisplayAlertAsync("Phone Dialer is not supported on this device.", null, "Ok");
                 }
             }
-            if (actionSheet.Equals(option02))
+            if (actionSheet.Equals(update))
             {
                 var contactParameters = new NavigationParameters
                 {
@@ -157,6 +157,8 @@ namespace Homework04.ViewModels
 
         private async Task UpdateList(int userID, ObservableCollection<Contact> contacts)
         {
+            var w = Barrel.Current.Get<ObservableCollection<Contact>>(key: userID.ToString());
+
             await Task.Delay(100);
 
         }
