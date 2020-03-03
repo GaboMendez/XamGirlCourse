@@ -13,5 +13,8 @@ https://tinyurl.com/thws9vs
 ### - Homework 02 - Login & Signup Page & Discovery Page:
 https://tinyurl.com/qvdodzh
 
+### - Homework 03 - Login & Signup Page & Discovery Page With UserAuthentication:
+---
+
 ### - Homework 04 - Contact Agenda:
 https://tinyurl.com/ulaedkz
