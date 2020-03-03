@@ -6,11 +6,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using Prism.Services;
+using Homework03.Models;
 
 namespace Homework03.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged, IInitialize, INavigationAware, IDestructible
     {
+        public static User User { get; set; }
         protected INavigationService NavigationService { get; private set; }
         protected IPageDialogService DialogService { get; private set; }
         public string Title { get; set; }
