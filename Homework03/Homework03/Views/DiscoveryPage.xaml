@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Homework03.Views"
+             xmlns:resources="clr-namespace:Homework03.Resx"
              mc:Ignorable="d" BackgroundColor="#f2f2f4"
              NavigationPage.HasNavigationBar="True"
              x:Class="Homework03.Views.DiscoveryPage">
@@ -30,24 +31,24 @@
                 <RowDefinition Height="4*"></RowDefinition>
                 <RowDefinition Height="4*"></RowDefinition>
             </Grid.RowDefinitions>
-
+            <!--Bars &#x0026; Hotels-->
             <views:FrameView Grid.Row="0" Grid.Column="0" Margin="0,15,0,0"
-                             Image="ic_beer" Title="Bars &#x0026; Hotels" Text="42 Place"/>
+                             Image="ic_beer" Title="{x:Static resources:AppResources.DiscTitle01}" Text="{x:Static resources:AppResources.DiscText01}"/>
 
             <views:FrameView Grid.Row="0" Grid.Column="1" Margin="0,15,0,0"
-                             Image="ic_dining" Title="Fine Dining" Text="15 Place"/>
+                             Image="ic_dining" Title="{x:Static resources:AppResources.DiscTitle02}" Text="{x:Static resources:AppResources.DiscText02}"/>
 
             <views:FrameView Grid.Row="1" Grid.Column="0" 
-                             Image="ic_cafes" Title="Cafes" Text="28 Place"/>
+                             Image="ic_cafes" Title="{x:Static resources:AppResources.DiscTitle03}" Text="{x:Static resources:AppResources.DiscText03}"/>
 
             <views:FrameView Grid.Row="1" Grid.Column="1" 
-                             Image="ic_travel" Title="Nearby" Text="34 Place"/>
+                             Image="ic_travel" Title="{x:Static resources:AppResources.DiscTitle04}" Text="{x:Static resources:AppResources.DiscText04}"/>
 
             <views:FrameView Grid.Row="2" Grid.Column="0" Margin="0,0,0,15"
-                             Image="ic_food" Title="Fast Foods" Text="29 Place"/>
+                             Image="ic_food" Title="{x:Static resources:AppResources.DiscTitle05}" Text="{x:Static resources:AppResources.DiscText05}"/>
 
             <views:FrameView Grid.Row="2" Grid.Column="1" Margin="0,0,0,15"
-                             Image="ic_pizza" Title="Featured Foods" Text="21 Place"/>
+                             Image="ic_pizza" Title="{x:Static resources:AppResources.DiscTitle06}" Text="{x:Static resources:AppResources.DiscText06}"/>
 
         </Grid>
 
