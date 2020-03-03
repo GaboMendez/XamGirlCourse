@@ -1,20 +1,25 @@
-# XamGirl Course
-This repository contains all the practices of the XamGirl course with Charlin Agramonte. 
-* **Blog:** https://xamgirl.com/blog/
+# Homework 03
 
-Every assignment is a branch from ```master``` of ***(XamGirlCourse Repository)***
+* Replicate the design of these two pages. Based on the last task, connect the Login / Registration page so that they can navigate each other
+<p aling="center">
+<img src="/ScreenShots/Design01.JPG" width="30%" />
+ </p>
+ 
+* When you click on login or registration if the fields are valid, navigate to this new screen
+<p aling="center">
+<img src="/ScreenShots/Design02.JPG" width="30%" />
+ </p>
+ 
+* When you click on the element it should change color.
 
-### - Homework Extra 01 - Replicate Design:
-https://tinyurl.com/qretrwj
+* Persistence of Login and Signup Data.
+ 
+* Use Resx files for App Resources and all the strings of your DiscoveryPage have it there for multi-language App
 
-### - Homework 01 - Login & Signup Page:
-https://tinyurl.com/thws9vs
-
-### - Homework 02 - Login & Signup Page & Discovery Page:
-https://tinyurl.com/qvdodzh
-
-### - Homework 03 - Login & Signup Page & Discovery Page With UserAuthentication:
----
-
-### - Homework 04 - Contact Agenda:
-https://tinyurl.com/ulaedkz
+## Screenshots
+<p aling="center">
+<img src="/ScreenShots/Screen01.JPG" width="30%" /> <img src="/ScreenShots/Screen02.JPG" width="30%" /> 
+<img src="/ScreenShots/Screen03.JPG" width="30%" /> 
+ </p>
+ 
+ #### Made by: *Gabriel Mendez Reyes*
