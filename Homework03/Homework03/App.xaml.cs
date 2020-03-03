@@ -23,13 +23,18 @@ namespace Homework03
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync($"{Constants.Navigation}/{Constants.Login}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<MainTabbedPage>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
+
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<SignupPage, SignupPageViewModel>();
+            containerRegistry.RegisterForNavigation<DiscoveryPage, DiscoveryPageViewModel>();
         }
     }
 }

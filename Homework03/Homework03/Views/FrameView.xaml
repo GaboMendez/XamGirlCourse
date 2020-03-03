@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Homework03.Views.FrameView">
+
+    <ContentView.Content>
+
+      <Frame x:Name="frame" HasShadow="True" CornerRadius="5"
+             BackgroundColor="#FFFFFF" BorderColor="LightGray">
+          <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Margin="-10,-10">
+              <Image x:Name="image" HeightRequest="60" WidthRequest="60" Margin="0,10" />
+              <Label x:Name="title" FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                     Style="{StaticResource LabelStyle}" FontSize="15" Margin="0,0,0,-10"  />
+              <Label x:Name="text" FontFamily="{StaticResource PoppinsSemiBoldFont}"
+                     Style="{StaticResource LabelStyle}" FontSize="13" TextColor="DarkGray" />
+          </StackLayout>
+
+          <Frame.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Frame_OnTapped"></TapGestureRecognizer>
+          </Frame.GestureRecognizers>
+      </Frame>
+
+    </ContentView.Content>
+
+</ContentView>

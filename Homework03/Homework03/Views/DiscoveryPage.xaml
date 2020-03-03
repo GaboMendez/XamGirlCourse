@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:Homework03.Views"
+             mc:Ignorable="d" BackgroundColor="#f2f2f4"
+             NavigationPage.HasNavigationBar="True"
+             x:Class="Homework03.Views.DiscoveryPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label  Style="{StaticResource LabelStyle}" 
+                    FontFamily="{StaticResource PoppinsBoldFont}"
+                    Text="{Binding Title}" FontSize="21" Margin="0,10,0,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+
+        <Grid VerticalOptions="Fill" HorizontalOptions="Fill"  
+              ColumnSpacing="25" RowSpacing="15" Margin="15,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <views:FrameView Grid.Row="0" Grid.Column="0" Margin="0,15,0,0"
+                             Image="ic_beer" Title="Bars &#x0026; Hotels" Text="42 Place"/>
+
+            <views:FrameView Grid.Row="0" Grid.Column="1" Margin="0,15,0,0"
+                             Image="ic_dining" Title="Fine Dining" Text="15 Place"/>
+
+            <views:FrameView Grid.Row="1" Grid.Column="0" 
+                             Image="ic_cafes" Title="Cafes" Text="28 Place"/>
+
+            <views:FrameView Grid.Row="1" Grid.Column="1" 
+                             Image="ic_travel" Title="Nearby" Text="34 Place"/>
+
+            <views:FrameView Grid.Row="2" Grid.Column="0" Margin="0,0,0,15"
+                             Image="ic_food" Title="Fast Foods" Text="29 Place"/>
+
+            <views:FrameView Grid.Row="2" Grid.Column="1" Margin="0,0,0,15"
+                             Image="ic_pizza" Title="Featured Foods" Text="21 Place"/>
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

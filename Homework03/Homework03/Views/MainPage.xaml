@@ -2,10 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Homework03.Views.MainPage"
-             Title="{Binding Title}">
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="#f2f2f4" >
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label  Style="{StaticResource LabelStyle}" 
+                    FontFamily="{StaticResource PoppinsBoldFont}"
+                    Text="{Binding Title}" FontSize="21" Margin="0,10,0,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+
+            <Label Text="Welcome to this Page!" Margin="0,30"
+                   Style="{StaticResource LabelStyle}" FontSize="18"
+                   VerticalOptions="Start" HorizontalTextAlignment="Center"/>
+
+            <Frame VerticalOptions="End" Margin="60,30" 
+                   Style="{StaticResource FrameEntry}" CornerRadius="20" 
+                   BackgroundColor="FloralWhite" BorderColor="DarkGray" >
+                <Button Text="&#x2716;  Log Out" Command="{Binding LogoutCommand}" 
+                        Style="{StaticResource ButtonStyle}"></Button>
+            </Frame>
+            
+        </Grid>
+    </ContentPage.Content>
+
 
 </ContentPage>
