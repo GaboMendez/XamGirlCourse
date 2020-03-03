@@ -131,8 +131,7 @@ namespace Homework04.ViewModels
                     break;
             }
         }
-
-
+        
         public override void Initialize(INavigationParameters parameters)
         {
             base.Initialize(parameters);

@@ -167,6 +167,7 @@ namespace Homework04.ViewModels
         {
             Barrel.Current.Empty(key: userID.ToString());
             Barrel.Current.Add(key: userID.ToString(), data: contacts, expireIn: TimeSpan.FromDays(7));
+            Contacts = Barrel.Current.Get<ObservableCollection<Contact>>(userID.ToString());
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
