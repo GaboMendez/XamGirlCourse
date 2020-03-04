@@ -63,108 +63,117 @@ namespace Homework03.Resx {
         /// <summary>
         ///   Looks up a localized string similar to 42 Place.
         /// </summary>
-        public static string DiscText01 {
+        public static string DiscoveryText01 {
             get {
-                return ResourceManager.GetString("DiscText01", resourceCulture);
+                return ResourceManager.GetString("DiscoveryText01", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 15 Place.
         /// </summary>
-        public static string DiscText02 {
+        public static string DiscoveryText02 {
             get {
-                return ResourceManager.GetString("DiscText02", resourceCulture);
+                return ResourceManager.GetString("DiscoveryText02", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 28 Place.
         /// </summary>
-        public static string DiscText03 {
+        public static string DiscoveryText03 {
             get {
-                return ResourceManager.GetString("DiscText03", resourceCulture);
+                return ResourceManager.GetString("DiscoveryText03", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 34 Place.
         /// </summary>
-        public static string DiscText04 {
+        public static string DiscoveryText04 {
             get {
-                return ResourceManager.GetString("DiscText04", resourceCulture);
+                return ResourceManager.GetString("DiscoveryText04", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 29 Place.
         /// </summary>
-        public static string DiscText05 {
+        public static string DiscoveryText05 {
             get {
-                return ResourceManager.GetString("DiscText05", resourceCulture);
+                return ResourceManager.GetString("DiscoveryText05", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 21 Place.
         /// </summary>
-        public static string DiscText06 {
+        public static string DiscoveryText06 {
             get {
-                return ResourceManager.GetString("DiscText06", resourceCulture);
+                return ResourceManager.GetString("DiscoveryText06", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Bar &amp; Hotels.
         /// </summary>
-        public static string DiscTitle01 {
+        public static string DiscoveryTitle01 {
             get {
-                return ResourceManager.GetString("DiscTitle01", resourceCulture);
+                return ResourceManager.GetString("DiscoveryTitle01", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Fine Dining.
         /// </summary>
-        public static string DiscTitle02 {
+        public static string DiscoveryTitle02 {
             get {
-                return ResourceManager.GetString("DiscTitle02", resourceCulture);
+                return ResourceManager.GetString("DiscoveryTitle02", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cafes.
         /// </summary>
-        public static string DiscTitle03 {
+        public static string DiscoveryTitle03 {
             get {
-                return ResourceManager.GetString("DiscTitle03", resourceCulture);
+                return ResourceManager.GetString("DiscoveryTitle03", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Nearby.
         /// </summary>
-        public static string DiscTitle04 {
+        public static string DiscoveryTitle04 {
             get {
-                return ResourceManager.GetString("DiscTitle04", resourceCulture);
+                return ResourceManager.GetString("DiscoveryTitle04", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Fast Foods.
         /// </summary>
-        public static string DiscTitle05 {
+        public static string DiscoveryTitle05 {
             get {
-                return ResourceManager.GetString("DiscTitle05", resourceCulture);
+                return ResourceManager.GetString("DiscoveryTitle05", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Featured Foods.
         /// </summary>
-        public static string DiscTitle06 {
+        public static string DiscoveryTitle06 {
             get {
-                return ResourceManager.GetString("DiscTitle06", resourceCulture);
+                return ResourceManager.GetString("DiscoveryTitle06", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discovery.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

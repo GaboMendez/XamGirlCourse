@@ -13,7 +13,7 @@
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Label  Style="{StaticResource LabelStyle}" 
                     FontFamily="{StaticResource PoppinsBoldFont}"
-                    Text="{Binding Title}" FontSize="21" Margin="0,10,0,0"/>
+                    Text="{x:Static resources:AppResources.Title}" FontSize="21" Margin="0,10,0,0"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
@@ -33,22 +33,22 @@
             </Grid.RowDefinitions>
             <!--Bars &#x0026; Hotels-->
             <views:FrameView Grid.Row="0" Grid.Column="0" Margin="0,15,0,0"
-                             Image="ic_beer" Title="{x:Static resources:AppResources.DiscTitle01}" Text="{x:Static resources:AppResources.DiscText01}"/>
+                             Image="ic_beer" Title="{x:Static resources:AppResources.DiscoveryTitle01}" Text="{x:Static resources:AppResources.DiscoveryText01}"/>
 
             <views:FrameView Grid.Row="0" Grid.Column="1" Margin="0,15,0,0"
-                             Image="ic_dining" Title="{x:Static resources:AppResources.DiscTitle02}" Text="{x:Static resources:AppResources.DiscText02}"/>
+                             Image="ic_dining" Title="{x:Static resources:AppResources.DiscoveryTitle02}" Text="{x:Static resources:AppResources.DiscoveryText02}"/>
 
             <views:FrameView Grid.Row="1" Grid.Column="0" 
-                             Image="ic_cafes" Title="{x:Static resources:AppResources.DiscTitle03}" Text="{x:Static resources:AppResources.DiscText03}"/>
+                             Image="ic_cafes" Title="{x:Static resources:AppResources.DiscoveryTitle03}" Text="{x:Static resources:AppResources.DiscoveryText03}"/>
 
             <views:FrameView Grid.Row="1" Grid.Column="1" 
-                             Image="ic_travel" Title="{x:Static resources:AppResources.DiscTitle04}" Text="{x:Static resources:AppResources.DiscText04}"/>
+                             Image="ic_travel" Title="{x:Static resources:AppResources.DiscoveryTitle04}" Text="{x:Static resources:AppResources.DiscoveryText04}"/>
 
             <views:FrameView Grid.Row="2" Grid.Column="0" Margin="0,0,0,15"
-                             Image="ic_food" Title="{x:Static resources:AppResources.DiscTitle05}" Text="{x:Static resources:AppResources.DiscText05}"/>
+                             Image="ic_food" Title="{x:Static resources:AppResources.DiscoveryTitle05}" Text="{x:Static resources:AppResources.DiscoveryText05}"/>
 
             <views:FrameView Grid.Row="2" Grid.Column="1" Margin="0,0,0,15"
-                             Image="ic_pizza" Title="{x:Static resources:AppResources.DiscTitle06}" Text="{x:Static resources:AppResources.DiscText06}"/>
+                             Image="ic_pizza" Title="{x:Static resources:AppResources.DiscoveryTitle06}" Text="{x:Static resources:AppResources.DiscoveryText06}"/>
 
         </Grid>
 

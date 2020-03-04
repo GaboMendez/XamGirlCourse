@@ -117,40 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DiscText01" xml:space="preserve">
+  <data name="DiscoveryText01" xml:space="preserve">
     <value>42 Place</value>
   </data>
-  <data name="DiscText02" xml:space="preserve">
+  <data name="DiscoveryText02" xml:space="preserve">
     <value>15 Place</value>
   </data>
-  <data name="DiscText03" xml:space="preserve">
+  <data name="DiscoveryText03" xml:space="preserve">
     <value>28 Place</value>
   </data>
-  <data name="DiscText04" xml:space="preserve">
+  <data name="DiscoveryText04" xml:space="preserve">
     <value>34 Place</value>
   </data>
-  <data name="DiscText05" xml:space="preserve">
+  <data name="DiscoveryText05" xml:space="preserve">
     <value>29 Place</value>
   </data>
-  <data name="DiscText06" xml:space="preserve">
+  <data name="DiscoveryText06" xml:space="preserve">
     <value>21 Place</value>
   </data>
-  <data name="DiscTitle01" xml:space="preserve">
+  <data name="DiscoveryTitle01" xml:space="preserve">
     <value>Bar &amp; Hotels</value>
   </data>
-  <data name="DiscTitle02" xml:space="preserve">
+  <data name="DiscoveryTitle02" xml:space="preserve">
     <value>Fine Dining</value>
   </data>
-  <data name="DiscTitle03" xml:space="preserve">
+  <data name="DiscoveryTitle03" xml:space="preserve">
     <value>Cafes</value>
   </data>
-  <data name="DiscTitle04" xml:space="preserve">
+  <data name="DiscoveryTitle04" xml:space="preserve">
     <value>Nearby</value>
   </data>
-  <data name="DiscTitle05" xml:space="preserve">
+  <data name="DiscoveryTitle05" xml:space="preserve">
     <value>Fast Foods</value>
   </data>
-  <data name="DiscTitle06" xml:space="preserve">
+  <data name="DiscoveryTitle06" xml:space="preserve">
     <value>Featured Foods</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Discovery</value>
   </data>
 </root>

@@ -17,9 +17,24 @@
         <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
 
             <Label Text="Welcome to this Page!" Margin="0,30"
-                   Style="{StaticResource LabelStyle}" FontSize="18"
+                   Style="{StaticResource LabelStyle}" FontSize="20"
                    VerticalOptions="Start" HorizontalTextAlignment="Center"/>
 
+            <Frame  CornerRadius="18" Padding="10,5"
+                    VerticalOptions="Center" HorizontalOptions="Center"
+                    BorderColor="Black" BackgroundColor="White" >
+                <Picker Title="Change Language" TitleColor="DarkSlateGray"
+                        SelectedItem="{Binding SelectedValue}"
+                        FontSize="20" FontAttributes="Bold">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Spanish</x:String>
+                            <x:String>English</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Frame>
+            
             <Frame VerticalOptions="End" Margin="60,30" 
                    Style="{StaticResource FrameEntry}" CornerRadius="20" 
                    BackgroundColor="FloralWhite" BorderColor="DarkGray" >
