@@ -61,9 +61,8 @@ namespace Homework03.ViewModels
                                 {
                                     { "User", User }
                                 };
-                                await Task.Delay(200);
-                                await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute), userParameters);
 
+                                await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute), userParameters);
                             }
                             else
                                 await DialogService.DisplayAlertAsync("Invalid Login Credentials! \nTry again!", null, "Ok");
