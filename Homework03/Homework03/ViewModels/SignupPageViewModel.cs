@@ -80,7 +80,7 @@ namespace Homework03.ViewModels
                             {
                                 { "User", NewUser }
                             };
-                            await Task.Delay(200);
+
                             await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute), userParameters);
                         }
 
