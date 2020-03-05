@@ -41,7 +41,7 @@ namespace Homework03.ViewModels
             {
                 CanExecute = false;
 
-                if (String.IsNullOrEmpty(ActualUser.Username) || String.IsNullOrEmpty(ActualUser.Password))
+                if (string.IsNullOrEmpty(ActualUser.Username) || string.IsNullOrEmpty(ActualUser.Password))
                 {
                     await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
                 }
@@ -56,13 +56,8 @@ namespace Homework03.ViewModels
                             var User = Barrel.Current.Get<User>(key: ActualUser.Username.ToLower());
                             if (User != null)
                             {
-
-                                var userParameters = new NavigationParameters
-                                {
-                                    { "User", User }
-                                };
-
-                                await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute), userParameters);
+                                await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", 
+                                                                                UriKind.Absolute), ("User", User) );
                             }
                             else
                                 await DialogService.DisplayAlertAsync("Invalid Login Credentials! \nTry again!", null, "Ok");

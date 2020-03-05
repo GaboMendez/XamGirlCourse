@@ -57,7 +57,8 @@ namespace Homework03.ViewModels
             {
                 CanExecute = false;
 
-                if (String.IsNullOrEmpty(NewUser.Email) || String.IsNullOrEmpty(NewUser.Username) || String.IsNullOrEmpty(NewUser.Password) || String.IsNullOrEmpty(NewUser.ConfirmPassword))
+                if (string.IsNullOrEmpty(NewUser.Email) || string.IsNullOrEmpty(NewUser.Username) || 
+                    string.IsNullOrEmpty(NewUser.Password) || string.IsNullOrEmpty(NewUser.ConfirmPassword))
                 {
                     await DialogService.DisplayAlertAsync("Fields can not be empty! \nTry again!", null, "Ok");
                 }
@@ -76,12 +77,8 @@ namespace Homework03.ViewModels
                             Barrel.Current.Add(key: "LastUserID", data: NewUser.ID, expireIn: TimeSpan.FromDays(7));
                             Barrel.Current.Add(key: NewUser.Username.ToLower(), data: NewUser, expireIn: TimeSpan.FromDays(7));
 
-                            var userParameters = new NavigationParameters
-                            {
-                                { "User", NewUser }
-                            };
-
-                            await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", UriKind.Absolute), userParameters);
+                            await NavigationService.NavigateAsync(new Uri($"/{Constants.Navigation}/{Constants.TabbedPage}?selectedTab={Constants.Discovery}", 
+                                                                            UriKind.Absolute), ("User", NewUser) );
                         }
 
                     }
