@@ -48,8 +48,7 @@ namespace Homework03.ViewModels
         {
             Title = "Title";
 
-            LogoutCommand = new DelegateCommand(async () => { await Logout(); });
-          
+            LogoutCommand = new DelegateCommand(async () => { await Logout(); });          
         }
 
         private async Task Logout()

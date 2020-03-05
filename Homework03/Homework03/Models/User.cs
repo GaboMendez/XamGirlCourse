@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-using Xamarin.Essentials;
 
 namespace Homework03.Models
 {

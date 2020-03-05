@@ -16,6 +16,7 @@ namespace Homework03
         //Pages
         public static string Login = "LoginPage";
         public static string Signup = "SignupPage";
+        public static string Main = "MainPage";
         public static string Discovery = "DiscoveryPage";
     }
 }

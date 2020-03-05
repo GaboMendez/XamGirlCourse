@@ -99,7 +99,6 @@ namespace Homework03.ViewModels
                 Barrel.ApplicationId = "AllUsers";
             }
             User = null;
-
             //Barrel.Current.EmptyAll();
             //SecureStorage.RemoveAll();
         }

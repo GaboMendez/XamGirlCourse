@@ -10,8 +10,6 @@ namespace Homework03.ViewModels
     {
         public DiscoveryPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
-        {
-            Title = "Discovery";
-        }
+        { }
     }
 }
