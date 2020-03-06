@@ -23,7 +23,7 @@ namespace Homework05
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync($"{Constants.Navigation}/{Constants.Main}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

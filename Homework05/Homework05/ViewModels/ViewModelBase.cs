@@ -1,26 +1,24 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Homework05.ViewModels
 {
-    public class ViewModelBase : BindableBase, IInitialize, INavigationAware, IDestructible
+    public class ViewModelBase : INotifyPropertyChanged, IInitialize, INavigationAware, IDestructible
     {
         protected INavigationService NavigationService { get; private set; }
+        protected IPageDialogService DialogService { get; private set; }
+        public string Title { get; set; }
 
-        private string _title;
-        public string Title
-        {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
-        }
-
-        public ViewModelBase(INavigationService navigationService)
+        public ViewModelBase(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             NavigationService = navigationService;
+            DialogService = pageDialogService;
         }
 
         public virtual void Initialize(INavigationParameters parameters)
@@ -42,5 +40,7 @@ namespace Homework05.ViewModels
         {
 
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

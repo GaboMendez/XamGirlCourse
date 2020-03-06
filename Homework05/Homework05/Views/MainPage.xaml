@@ -2,10 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Homework05.Views.MainPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             NavigationPage.HasNavigationBar="False">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        
+        <Image Grid.Row="0" Grid.RowSpan="2" Source="ic_background" Margin="-120" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+
+        <StackLayout Grid.Row="1" Margin="0,50,0,0" BackgroundColor="#616161" VerticalOptions="End" >
+            <Frame CornerRadius="50" Style="{StaticResource stlFrame}" Margin="0,-25" BackgroundColor="#616161">
+                <Grid>
+                    <Label Text="Welcome to Xamarin Forms and Prism!"
+                       VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Button Text="Click!" Command="{Binding Command}"
+                        VerticalOptions="Center" HorizontalOptions="End"/>
+                </Grid>
+            </Frame>
+
+        </StackLayout>
+        
+    </Grid>
 
 </ContentPage>

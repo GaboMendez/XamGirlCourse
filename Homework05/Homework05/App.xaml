@@ -6,6 +6,15 @@
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            
+            <Style x:Key="stlFrame" TargetType="Frame">
+                <Setter Property="TranslationY"    Value="{OnPlatform Android='-30'}"/>
+                <Setter Property="HeightRequest"   Value="{OnPlatform Android='230'}"/>
+                <Setter Property="HasShadow"       Value="False" />
+            </Style>
 
-	</Application.Resources>
+        </ResourceDictionary>
+
+    </Application.Resources>
 </prism:PrismApplication>
