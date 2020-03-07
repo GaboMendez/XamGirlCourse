@@ -7,7 +7,65 @@
 
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBlackFont">
+                <On Platform="Android" Value="Poppins-Black.ttf#Poppins Black" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBoldFont">
+                <On Platform="Android" Value="Poppins-Bold.ttf#Poppins Bold" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsFont">
+                <On Platform="Android" Value="Poppins-Regular.ttf#Poppins" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsSemiBoldFont">
+                <On Platform="Android" Value="Poppins-SemiBold.ttf#Poppins SemiBold" />
+            </OnPlatform>
+
+            <Color x:Key="Primary">#c62828</Color>
+            <Color x:Key="PrimaryDark">#8e0000</Color>
+            <Color x:Key="PrimaryLight">#ff5f52</Color>
+
+            <Color x:Key="White">#FFFFFF</Color>
+            <Color x:Key="Gray">#616161</Color>
+            <Color x:Key="DarkGray">#363535</Color>
+
+            <Color x:Key="Red">#d50000</Color>
+            <Color x:Key="DarkRed">#c4001d</Color>
             
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsFont}" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsSemiBoldFont}" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="DarkGray" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{x:DynamicResource White}" />
+                <Setter Property="BorderRadius" Value="20" />
+            </Style>
+
+            <Style x:Key="FrameEntry" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HasShadow" Value="True" />
+            </Style>
+
             <Style x:Key="stlFrame" TargetType="Frame">
                 <Setter Property="TranslationY"    Value="{OnPlatform Android='-30'}"/>
                 <Setter Property="HeightRequest"   Value="{OnPlatform Android='230'}"/>

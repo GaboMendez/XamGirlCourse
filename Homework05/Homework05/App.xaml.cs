@@ -22,6 +22,7 @@ namespace Homework05
         protected override async void OnInitialized()
         {
             InitializeComponent();
+            XF.Material.Forms.Material.Init(this);
 
             await NavigationService.NavigateAsync($"{Constants.Navigation}/{Constants.Main}");
         }
@@ -30,6 +31,7 @@ namespace Homework05
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<AnimePage, AnimePageViewModel>();
         }
     }
 }

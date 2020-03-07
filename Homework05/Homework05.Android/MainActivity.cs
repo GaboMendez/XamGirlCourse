@@ -15,8 +15,9 @@ namespace Homework05.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            XF.Material.Droid.Material.Init(this, bundle);
+
             LoadApplication(new App(new AndroidInitializer()));
         }
     }

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Homework05.Controls"
+             mc:Ignorable="d" NavigationPage.HasBackButton="False"
+             x:Class="Homework05.Views.AnimePage" BackgroundColor="#f2f2f4">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label  Style="{StaticResource LabelStyle}" TextColor="White"
+                    FontFamily="{StaticResource PoppinsBoldFont}"
+                    Text="{Binding Title}" FontSize="26" Margin="0,10,0,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="8*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
+            
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center" VerticalOptions="End"
+                         Grid.Row="0" Margin="10,0,0,0" >
+                <Frame Style="{StaticResource FrameEntry}" Margin="10,15" Padding="0"
+                       HorizontalOptions="Center" VerticalOptions="Center" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="8.5*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="ic_search" HeightRequest="0" Margin="5,15,-15,15">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SearchCommand}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <controls:CustomEntry Grid.Column="1" Placeholder=" Search Anime" WidthRequest="200" x:Name="Entry"
+                                              VerticalOptions="Center" VerticalTextAlignment="Center"
+                                              Margin="10,5,0,0"
+                                              Style="{StaticResource EntryStyle}" Text="{Binding SearchText}" />
+                    </Grid>
+                </Frame>
+
+                <Button Margin="-3,0,5,0" Command="{Binding SearchCommand}" Text="Search" BorderColor="{x:DynamicResource DarkGray}"
+                        HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"
+                        BackgroundColor="{x:DynamicResource Gray}" Style="{StaticResource ButtonStyle}" FontSize="18">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button"
+                                     Binding="{Binding Source={x:Reference Entry},
+                                            Path=Text.Length}"
+                                     Value="0">
+                            <Setter Property="IsVisible" Value="False" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Button Margin="-10,0,5,0" Command="{Binding CancelCommand}" Text="Cancel" BorderColor="{x:DynamicResource DarkGray}"
+                        HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"   IsVisible="{Binding CancelBool}"
+                        BackgroundColor="{x:DynamicResource Red}" Style="{StaticResource ButtonStyle}" FontSize="18" />
+            </StackLayout>
+            
+            
+            <Label Text="Welcome to Xamarin.Forms!" Grid.Row="1"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

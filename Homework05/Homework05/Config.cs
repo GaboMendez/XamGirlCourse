@@ -14,6 +14,6 @@ namespace Homework05
 
         //Pages
         public static string Main = "MainPage";
-        public static string Discovery = "DiscoveryPage";
+        public static string Anime = "AnimePage";
     }
 }
