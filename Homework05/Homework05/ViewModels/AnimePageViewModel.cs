@@ -47,14 +47,14 @@ namespace Homework05.ViewModels
             : base(navigationService, pageDialogService)
         {
             Title = "AnimeX";
-
+            ObservablePosts = new ObservableCollection<Post>();
             SearchCommand = new DelegateCommand(async () => { await Search(); });
             CancelCommand = new DelegateCommand( () => { Cancel(); });
         }
 
         private void Cancel()
         {
-            CancelBool = CancelBool ? !CancelBool : !CancelBool;
+            CancelBool = !CancelBool;
             SearchText = "";
         }
 
@@ -68,9 +68,14 @@ namespace Homework05.ViewModels
             {
                 if (ObservablePosts.Count.Equals(0))
                 {
-
+                    ObservablePosts = new ObservableCollection<Post>
+                    { 
+                        new Post("Fullmetal Alchemist: Brotherhood","https://cdn.myanimelist.net/images/anime/1223/96541.jpg?s=faffcb677a5eacd17bf761edd78bfb3f"),
+                        new Post("Gintama","https://cdn.myanimelist.net/images/anime/3/72078.jpg?s=e9537ac90c08758594c787ede117f209"),
+                        new Post("Hunter x Hunter (2011)","https://cdn.myanimelist.net/images/anime/11/33657.jpg?s=5724d8c22ae7a1dad72d8f4229ef803f"),
+                        new Post("Shingeki no Kyojin Season 3 Part 2","https://cdn.myanimelist.net/images/anime/1517/100633.jpg?s=4540a01b5883647ade494cd28392f100"),
+                    };
                 }
-                
                 CancelBool = true;
             }
 

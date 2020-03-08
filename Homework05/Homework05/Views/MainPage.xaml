@@ -13,7 +13,7 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         
-        <Image Grid.Row="0" Grid.RowSpan="2" Source="ic_mainbackground" Margin="-50" 
+        <Image Grid.Row="0" Grid.RowSpan="2" Source="ic_mainbackground" Margin="-50,-150,-50,-50" 
                VerticalOptions="Fill" HorizontalOptions="Fill"/>
 
         <StackLayout Grid.Row="1" BackgroundColor="White" VerticalOptions="End" >
@@ -29,8 +29,10 @@
                                              HorizontalOptions="End" VerticalOptions="End" 
                                              Margin="10,0,20,10" CornerRadius="20"
                                              FontAttributes="Bold" FontSize="15" 
-                                             Text="Watch Animes  &#x25B6;" TextColor="White" />
-              
+                                             Text="Watch Animes  " TextColor="White" />
+                    <Image Source="ic_arrow" Margin="0,60,35,0"
+                           VerticalOptions="Center" HorizontalOptions="End" HeightRequest="15" />
+
                 </Grid>
             </Frame>
 
