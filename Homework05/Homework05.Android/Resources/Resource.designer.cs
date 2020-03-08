@@ -4953,19 +4953,19 @@ namespace Homework05.Droid
 			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_low_bg = global::Homework05.Droid.Resource.Drawable.notification_template_icon_low_bg;
 			global::Xamarin.Essentials.Resource.Drawable.notification_tile_bg = global::Homework05.Droid.Resource.Drawable.notification_tile_bg;
 			global::Xamarin.Essentials.Resource.Drawable.notify_panel_notification_icon_bg = global::Homework05.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Essentials.Resource.Id.actions = global::Homework05.Droid.Resource.Id.actions;
 			global::Xamarin.Essentials.Resource.Id.action_container = global::Homework05.Droid.Resource.Id.action_container;
 			global::Xamarin.Essentials.Resource.Id.action_divider = global::Homework05.Droid.Resource.Id.action_divider;
 			global::Xamarin.Essentials.Resource.Id.action_image = global::Homework05.Droid.Resource.Id.action_image;
 			global::Xamarin.Essentials.Resource.Id.action_text = global::Homework05.Droid.Resource.Id.action_text;
-			global::Xamarin.Essentials.Resource.Id.actions = global::Homework05.Droid.Resource.Id.actions;
 			global::Xamarin.Essentials.Resource.Id.all = global::Homework05.Droid.Resource.Id.all;
 			global::Xamarin.Essentials.Resource.Id.async = global::Homework05.Droid.Resource.Id.async;
 			global::Xamarin.Essentials.Resource.Id.blocking = global::Homework05.Droid.Resource.Id.blocking;
 			global::Xamarin.Essentials.Resource.Id.bottom = global::Homework05.Droid.Resource.Id.bottom;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_header_text = global::Homework05.Droid.Resource.Id.browser_actions_header_text;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::Homework05.Droid.Resource.Id.browser_actions_menu_items;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_icon = global::Homework05.Droid.Resource.Id.browser_actions_menu_item_icon;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_text = global::Homework05.Droid.Resource.Id.browser_actions_menu_item_text;
-			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::Homework05.Droid.Resource.Id.browser_actions_menu_items;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_view = global::Homework05.Droid.Resource.Id.browser_actions_menu_view;
 			global::Xamarin.Essentials.Resource.Id.center = global::Homework05.Droid.Resource.Id.center;
 			global::Xamarin.Essentials.Resource.Id.center_horizontal = global::Homework05.Droid.Resource.Id.center_horizontal;
@@ -5020,14 +5020,12 @@ namespace Homework05.Droid
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::Homework05.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::Homework05.Droid.Resource.Style.Widget_Compat_NotificationActionText;
 			global::Xamarin.Essentials.Resource.Style.Widget_Support_CoordinatorLayout = global::Homework05.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
-			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::Homework05.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem = global::Homework05.Droid.Resource.Styleable.ColorStateListItem;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_alpha = global::Homework05.Droid.Resource.Styleable.ColorStateListItem_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_alpha = global::Homework05.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_color = global::Homework05.Droid.Resource.Styleable.ColorStateListItem_android_color;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_keylines = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_keylines;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_Layout;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
@@ -5036,13 +5034,8 @@ namespace Homework05.Droid
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::Homework05.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::Homework05.Droid.Resource.Styleable.FontFamily;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderAuthority = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderCerts = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderPackage = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderQuery = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::Homework05.Droid.Resource.Styleable.FontFamilyFont;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::Homework05.Droid.Resource.Styleable.FontFamilyFont_android_font;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontStyle = global::Homework05.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
@@ -5054,7 +5047,16 @@ namespace Homework05.Droid
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::Homework05.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontWeight = global::Homework05.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_ttcIndex = global::Homework05.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderAuthority = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderCerts = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderPackage = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderQuery = global::Homework05.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor = global::Homework05.Droid.Resource.Styleable.GradientColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::Homework05.Droid.Resource.Styleable.GradientColorItem;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::Homework05.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::Homework05.Droid.Resource.Styleable.GradientColorItem_android_offset;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerColor = global::Homework05.Droid.Resource.Styleable.GradientColor_android_centerColor;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerX = global::Homework05.Droid.Resource.Styleable.GradientColor_android_centerX;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerY = global::Homework05.Droid.Resource.Styleable.GradientColor_android_centerY;
@@ -5067,9 +5069,7 @@ namespace Homework05.Droid
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startY = global::Homework05.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_tileMode = global::Homework05.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_type = global::Homework05.Droid.Resource.Styleable.GradientColor_android_type;
-			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::Homework05.Droid.Resource.Styleable.GradientColorItem;
-			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::Homework05.Droid.Resource.Styleable.GradientColorItem_android_color;
-			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::Homework05.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::Homework05.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::Homework05.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::Homework05.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::Homework05.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -16468,163 +16468,166 @@ namespace Homework05.Droid
 			public const int ic_mtrl_chip_close_circle = 2131165468;
 			
 			// aapt resource value: 0x7F07011D
-			public const int ic_search = 2131165469;
+			public const int ic_notFound = 2131165469;
 			
 			// aapt resource value: 0x7F07011E
-			public const int ic_star = 2131165470;
+			public const int ic_search = 2131165470;
 			
 			// aapt resource value: 0x7F07011F
-			public const int ic_vol_type_speaker_dark = 2131165471;
+			public const int ic_star = 2131165471;
 			
 			// aapt resource value: 0x7F070120
-			public const int ic_vol_type_speaker_group_dark = 2131165472;
+			public const int ic_vol_type_speaker_dark = 2131165472;
 			
 			// aapt resource value: 0x7F070121
-			public const int ic_vol_type_speaker_group_light = 2131165473;
+			public const int ic_vol_type_speaker_group_dark = 2131165473;
 			
 			// aapt resource value: 0x7F070122
-			public const int ic_vol_type_speaker_light = 2131165474;
+			public const int ic_vol_type_speaker_group_light = 2131165474;
 			
 			// aapt resource value: 0x7F070123
-			public const int ic_vol_type_tv_dark = 2131165475;
+			public const int ic_vol_type_speaker_light = 2131165475;
 			
 			// aapt resource value: 0x7F070124
-			public const int ic_vol_type_tv_light = 2131165476;
+			public const int ic_vol_type_tv_dark = 2131165476;
 			
 			// aapt resource value: 0x7F070125
-			public const int mr_button_connected_dark = 2131165477;
+			public const int ic_vol_type_tv_light = 2131165477;
 			
 			// aapt resource value: 0x7F070126
-			public const int mr_button_connected_light = 2131165478;
+			public const int mr_button_connected_dark = 2131165478;
 			
 			// aapt resource value: 0x7F070127
-			public const int mr_button_connecting_dark = 2131165479;
+			public const int mr_button_connected_light = 2131165479;
 			
 			// aapt resource value: 0x7F070128
-			public const int mr_button_connecting_light = 2131165480;
+			public const int mr_button_connecting_dark = 2131165480;
 			
 			// aapt resource value: 0x7F070129
-			public const int mr_button_dark = 2131165481;
+			public const int mr_button_connecting_light = 2131165481;
 			
 			// aapt resource value: 0x7F07012A
-			public const int mr_button_light = 2131165482;
+			public const int mr_button_dark = 2131165482;
 			
 			// aapt resource value: 0x7F07012B
-			public const int mr_dialog_close_dark = 2131165483;
+			public const int mr_button_light = 2131165483;
 			
 			// aapt resource value: 0x7F07012C
-			public const int mr_dialog_close_light = 2131165484;
+			public const int mr_dialog_close_dark = 2131165484;
 			
 			// aapt resource value: 0x7F07012D
-			public const int mr_dialog_material_background_dark = 2131165485;
+			public const int mr_dialog_close_light = 2131165485;
 			
 			// aapt resource value: 0x7F07012E
-			public const int mr_dialog_material_background_light = 2131165486;
+			public const int mr_dialog_material_background_dark = 2131165486;
 			
 			// aapt resource value: 0x7F07012F
-			public const int mr_group_collapse = 2131165487;
+			public const int mr_dialog_material_background_light = 2131165487;
 			
 			// aapt resource value: 0x7F070130
-			public const int mr_group_expand = 2131165488;
+			public const int mr_group_collapse = 2131165488;
 			
 			// aapt resource value: 0x7F070131
-			public const int mr_media_pause_dark = 2131165489;
+			public const int mr_group_expand = 2131165489;
 			
 			// aapt resource value: 0x7F070132
-			public const int mr_media_pause_light = 2131165490;
+			public const int mr_media_pause_dark = 2131165490;
 			
 			// aapt resource value: 0x7F070133
-			public const int mr_media_play_dark = 2131165491;
+			public const int mr_media_pause_light = 2131165491;
 			
 			// aapt resource value: 0x7F070134
-			public const int mr_media_play_light = 2131165492;
+			public const int mr_media_play_dark = 2131165492;
 			
 			// aapt resource value: 0x7F070135
-			public const int mr_media_stop_dark = 2131165493;
+			public const int mr_media_play_light = 2131165493;
 			
 			// aapt resource value: 0x7F070136
-			public const int mr_media_stop_light = 2131165494;
+			public const int mr_media_stop_dark = 2131165494;
 			
 			// aapt resource value: 0x7F070137
-			public const int mr_vol_type_audiotrack_dark = 2131165495;
+			public const int mr_media_stop_light = 2131165495;
 			
 			// aapt resource value: 0x7F070138
-			public const int mr_vol_type_audiotrack_light = 2131165496;
+			public const int mr_vol_type_audiotrack_dark = 2131165496;
 			
 			// aapt resource value: 0x7F070139
-			public const int mtrl_snackbar_background = 2131165497;
+			public const int mr_vol_type_audiotrack_light = 2131165497;
 			
 			// aapt resource value: 0x7F07013A
-			public const int mtrl_tabs_default_indicator = 2131165498;
+			public const int mtrl_snackbar_background = 2131165498;
 			
 			// aapt resource value: 0x7F07013B
-			public const int navigation_empty_icon = 2131165499;
+			public const int mtrl_tabs_default_indicator = 2131165499;
 			
 			// aapt resource value: 0x7F07013C
-			public const int notification_action_background = 2131165500;
+			public const int navigation_empty_icon = 2131165500;
 			
 			// aapt resource value: 0x7F07013D
-			public const int notification_bg = 2131165501;
+			public const int notification_action_background = 2131165501;
 			
 			// aapt resource value: 0x7F07013E
-			public const int notification_bg_low = 2131165502;
+			public const int notification_bg = 2131165502;
 			
 			// aapt resource value: 0x7F07013F
-			public const int notification_bg_low_normal = 2131165503;
+			public const int notification_bg_low = 2131165503;
 			
 			// aapt resource value: 0x7F070140
-			public const int notification_bg_low_pressed = 2131165504;
+			public const int notification_bg_low_normal = 2131165504;
 			
 			// aapt resource value: 0x7F070141
-			public const int notification_bg_normal = 2131165505;
+			public const int notification_bg_low_pressed = 2131165505;
 			
 			// aapt resource value: 0x7F070142
-			public const int notification_bg_normal_pressed = 2131165506;
+			public const int notification_bg_normal = 2131165506;
 			
 			// aapt resource value: 0x7F070143
-			public const int notification_icon_background = 2131165507;
+			public const int notification_bg_normal_pressed = 2131165507;
 			
 			// aapt resource value: 0x7F070144
-			public const int notification_template_icon_bg = 2131165508;
+			public const int notification_icon_background = 2131165508;
 			
 			// aapt resource value: 0x7F070145
-			public const int notification_template_icon_low_bg = 2131165509;
+			public const int notification_template_icon_bg = 2131165509;
 			
 			// aapt resource value: 0x7F070146
-			public const int notification_tile_bg = 2131165510;
+			public const int notification_template_icon_low_bg = 2131165510;
 			
 			// aapt resource value: 0x7F070147
-			public const int notify_panel_notification_icon_bg = 2131165511;
+			public const int notification_tile_bg = 2131165511;
 			
 			// aapt resource value: 0x7F070148
-			public const int tooltip_frame_dark = 2131165512;
+			public const int notify_panel_notification_icon_bg = 2131165512;
 			
 			// aapt resource value: 0x7F070149
-			public const int tooltip_frame_light = 2131165513;
+			public const int tooltip_frame_dark = 2131165513;
 			
 			// aapt resource value: 0x7F07014A
-			public const int xf_arrow_dropdown = 2131165514;
+			public const int tooltip_frame_light = 2131165514;
 			
 			// aapt resource value: 0x7F07014B
-			public const int xf_check = 2131165515;
+			public const int xf_arrow_dropdown = 2131165515;
 			
 			// aapt resource value: 0x7F07014C
-			public const int xf_checkbox_selected = 2131165516;
+			public const int xf_check = 2131165516;
 			
 			// aapt resource value: 0x7F07014D
-			public const int xf_checkbox_unselected = 2131165517;
+			public const int xf_checkbox_selected = 2131165517;
 			
 			// aapt resource value: 0x7F07014E
-			public const int xf_clear = 2131165518;
+			public const int xf_checkbox_unselected = 2131165518;
 			
 			// aapt resource value: 0x7F07014F
-			public const int xf_error = 2131165519;
+			public const int xf_clear = 2131165519;
 			
 			// aapt resource value: 0x7F070150
-			public const int xf_radio_button_selected = 2131165520;
+			public const int xf_error = 2131165520;
 			
 			// aapt resource value: 0x7F070151
-			public const int xf_radio_button_unselected = 2131165521;
+			public const int xf_radio_button_selected = 2131165521;
+			
+			// aapt resource value: 0x7F070152
+			public const int xf_radio_button_unselected = 2131165522;
 			
 			static Drawable()
 			{

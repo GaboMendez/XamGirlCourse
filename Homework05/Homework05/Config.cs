@@ -6,6 +6,9 @@ namespace Homework05
 {
     public static class Config
     {
+        public static string urlApi = "https://api.jikan.moe";
+
+
     }
     public static class Constants
     {

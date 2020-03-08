@@ -17,8 +17,16 @@ namespace Homework05.Droid
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             XF.Material.Droid.Material.Init(this, bundle);
+            Xamarin.Essentials.Platform.Init(this, bundle);
 
             LoadApplication(new App(new AndroidInitializer()));
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 

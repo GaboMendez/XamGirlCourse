@@ -47,7 +47,7 @@
                     </Grid>
                 </Frame>
 
-                <Button Margin="-3,0,5,0" Command="{Binding SearchCommand}" Text="Search" BorderColor="{x:DynamicResource DarkGray}"
+                <Button Margin="-3,0,10,0" Command="{Binding SearchCommand}" Text="Search" BorderColor="{x:DynamicResource DarkGray}"
                         HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"
                         BackgroundColor="{x:DynamicResource Gray}" Style="{StaticResource ButtonStyle}" FontSize="18">
                     <Button.Triggers>
@@ -60,68 +60,80 @@
                     </Button.Triggers>
                 </Button>
 
-                <Button Margin="-10,0,5,0" Command="{Binding CancelCommand}" Text="Cancel" BorderColor="{x:DynamicResource DarkGray}"
+                <Button Margin="-10,0,10,0" Command="{Binding CancelCommand}" Text="Cancel" BorderColor="{x:DynamicResource DarkGray}"
                         HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"   IsVisible="{Binding CancelBool}"
                         BackgroundColor="{x:DynamicResource Red}" Style="{StaticResource ButtonStyle}" FontSize="18" />
             </StackLayout>
+            
+            <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                         Grid.Row="1" Margin="0,-20,0,0"
+                         Command="{Binding RefreshCommand}">
+                <CollectionView ItemsSource="{Binding ObservableAnimeList}">
 
-            <CollectionView ItemsSource="{Binding ObservablePosts}" 
-                            Grid.Row="1" Margin="0,-20,0,-20">
-                
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical"
-                                     Span="2"  />
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        
-                        <Frame Padding="0" HeightRequest="265">
-                            <Frame Padding="10,5" CornerRadius="40" Margin="20,5"
-                                   OutlineColor="Gray" BackgroundColor="#c62828">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="7.5*" />
-                                        <RowDefinition Height="2*" />
-                                        <RowDefinition Height="0.5*" />
-                                    </Grid.RowDefinitions>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout    Orientation="Vertical" 
+                                            Span="2"  />
+                    </CollectionView.ItemsLayout>
 
-                                    <!--<Image Source="{Binding Image}" Grid.Row="0" Margin="-150,-150,-150,0" />-->
-                                    <Frame CornerRadius="40" BorderColor="Black"  Grid.Row="0"
-                                           HeightRequest="250" WidthRequest="160" 
-                                           HorizontalOptions="Center"
-                                           Padding="-5,0" Margin="0,0,0,-10"
-                                           IsClippedToBounds="True">
-                                        <Image  Source="{Binding Image}"
-                                                VerticalOptions="Center" 
-                                                HorizontalOptions="Center" 
-                                                Margin="-5,-5"
-                                                HeightRequest="250" 
-                                                WidthRequest="250"/>
-                                    </Frame>
-                                    
-                                    <Label Text="{Binding Title}" FontSize="11.5" Grid.Row="1"
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Frame Padding="-15,0" HeightRequest="265">
+                                <Frame  Padding="0,10" CornerRadius="20" Margin="20,7"
+                                        OutlineColor="Gray" BackgroundColor="#c62828">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="7*" />
+                                            <RowDefinition Height="2.5*" />
+                                            <RowDefinition Height="0.5*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Frame CornerRadius="30" Grid.Row="0"
+                                               HeightRequest="250" WidthRequest="160" 
+                                               HorizontalOptions="Center"
+                                               Padding="-25,0" Margin="-10,0,-10,-10">
+                                            <Image  Source="{Binding image_url}"
+                                                    VerticalOptions="Center" 
+                                                    HorizontalOptions="Center" 
+                                                    Margin="-5,-5"
+                                                    HeightRequest="250" 
+                                                    WidthRequest="250"/>
+                                        </Frame>
+
+                                        <Label Text="{Binding title}" FontSize="12" Grid.Row="1"
                                            HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"  TextColor="White"
-                                           Style="{StaticResource LabelStyle}" Margin="-2" FontFamily="{StaticResource PoppinsBoldFont}"/>
+                                           Style="{StaticResource LabelStyle}" Margin="0,5" FontFamily="{StaticResource PoppinsBoldFont}"/>
 
-                                    <StackLayout Orientation="Horizontal" Grid.Row="2"  Margin="0,-10,0,0"
+                                        <StackLayout Orientation="Horizontal" Grid.Row="2"  Margin="-5,-10,-5,0"
                                                  HorizontalOptions="Center" VerticalOptions="Start">
-                                        <Label Text="4.5" FontSize="12" Grid.Row="1"
-                                               HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"  TextColor="White"
-                                               Style="{StaticResource LabelStyle}" Margin="-5,0,-5,0" FontFamily="{StaticResource PoppinsBoldFont}"/>
-                                        <Image Source="ic_star" HeightRequest="15" VerticalOptions="Start" />
+                                            <Label Text="{Binding score}" Margin="-5,0,-5,0"  FontSize="12" TextColor="White" 
+                                               HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"  
+                                               Style="{StaticResource LabelStyle}" FontFamily="{StaticResource PoppinsBoldFont}"/>
+                                            <Image Source="ic_star" HeightRequest="14" VerticalOptions="Start" />
 
-                                    </StackLayout>
-                                   
-                                </Grid>
+                                            <Label Text="{Binding episodes, StringFormat=' | Episodes: {0:F0}'}" Margin="-5,0,-5,0" FontSize="12" TextColor="White"
+                                               HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" 
+                                               Style="{StaticResource LabelStyle}" FontFamily="{StaticResource PoppinsBoldFont}"/>
+                                        </StackLayout>
+
+                                    </Grid>
+                                </Frame>
                             </Frame>
-                        </Frame>
-                        
-                    </DataTemplate>     
-                    
-                </CollectionView.ItemTemplate>             
-                                
-            </CollectionView>
-           
+
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+
+                    <CollectionView.EmptyView>
+                        <Grid>
+                            <Image Source="ic_notFound" Margin="-50"
+                                   VerticalOptions="Center" HorizontalOptions="Center" />
+                        </Grid>
+                    </CollectionView.EmptyView>
+
+                </CollectionView>
+            </RefreshView>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
