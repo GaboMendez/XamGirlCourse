@@ -19,9 +19,15 @@ namespace Homework05.Models
         public string synopsis { get; set; }
         public string background { get; set; }
         public string premiered { get; set; }
+        public Aired aired { get; set; }
         public List<Genre> genres { get; set; }
         public List<string> opening_themes { get; set; }
         public List<string> ending_themes { get; set; }
+    }
+
+    public class Aired
+    {
+        public string String { get; set; }
     }
 
     public class Genre
@@ -31,4 +37,5 @@ namespace Homework05.Models
         public string name { get; set; }
         public string url { get; set; }
     }
+
 }

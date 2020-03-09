@@ -11,11 +11,11 @@ namespace Homework05.Services
     public interface IApiService
     {
         [Get("/v3/top/anime/{page}")]
-        Task<Animes> GetTopAnimes(int page);
+        Task<AnimeList> GetTopAnimes(int page);
 
 
         [Get("/v3/search/anime?q={anime}")]
-        Task<Animes> SearchAnime(string anime);
+        Task<AnimeList> SearchAnime(string anime);
 
 
         [Get("/v3/anime/{id}")]

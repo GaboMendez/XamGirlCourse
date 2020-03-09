@@ -32,6 +32,7 @@ namespace Homework05
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<AnimePage, AnimePageViewModel>();
+            containerRegistry.RegisterForNavigation<AnimeDetailPage, AnimeDetailPageViewModel>();
         }
     }
 }

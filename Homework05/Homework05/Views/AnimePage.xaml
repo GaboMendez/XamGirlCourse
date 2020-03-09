@@ -28,7 +28,7 @@
             </Grid.ColumnDefinitions>
 
             <Image Grid.Row="0" Grid.Column="0" 
-                   Margin="5,30,-15,30" Source="ic_back">
+                   Margin="10,35,-10,35" Source="ic_back">
                 <Image.Triggers>
                     <DataTrigger TargetType="Image" 
                                  Binding="{Binding Source={x:Reference SearchButton}, Path=IsVisible}"
@@ -42,7 +42,7 @@
             </Image>
 
             <Image Grid.Row="0" Grid.Column="2" 
-                   Margin="-15,30,5,30" Source="ic_next" >
+                   Margin="-10,35,10,35" Source="ic_next" >
                 <Image.Triggers>
                     <DataTrigger TargetType="Image" 
                                  Binding="{Binding Source={x:Reference SearchButton}, Path=IsVisible}"
@@ -96,22 +96,22 @@
                         HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"   IsVisible="{Binding CancelBool}"
                         BackgroundColor="{x:DynamicResource Red}" Style="{StaticResource ButtonStyle}" FontSize="18" />
             </StackLayout>
-            
-            <RefreshView IsRefreshing="{Binding IsRefreshing}"
-                         Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,-20,0,0"
-                         Command="{Binding RefreshCommand}">               
-                <CollectionView ItemsSource="{Binding ObservableAnimeList}">
 
+            <RefreshView IsRefreshing="{Binding IsRefreshing}" Margin="0,-15,0,0"
+                         Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                         Command="{Binding RefreshCommand}">               
+                <CollectionView ItemsSource="{Binding ObservableAnime}" SelectionMode="Single" 
+                                SelectedItem="{Binding SelectedAnime}">
                     
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout    Orientation="Vertical" 
-                                            Span="2"  />
+                        <GridItemsLayout Orientation="Vertical" 
+                                         Span="2"  />
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
-                            <Frame Padding="-15,0" HeightRequest="265">
+                            <Frame Padding="-15,-1" HeightRequest="265">
                                 <Frame  Padding="0,10" CornerRadius="20" Margin="20,7"
                                         OutlineColor="Gray" BackgroundColor="#c62828">
                                     <Grid>
@@ -122,16 +122,12 @@
                                             <RowDefinition Height="0.5*" />
                                         </Grid.RowDefinitions>
 
-                                        <Frame CornerRadius="30" Grid.Row="0"
-                                               HeightRequest="250" WidthRequest="155" 
-                                               HorizontalOptions="Center"
-                                               Padding="-25,0" Margin="-10,0,-10,-10">
-                                            <Image  Source="{Binding image_url}"
-                                                    VerticalOptions="Center" 
-                                                    HorizontalOptions="Center" 
-                                                    Margin="-5,-5"
-                                                    HeightRequest="250" 
-                                                    WidthRequest="250"/>
+                                        <Frame CornerRadius="20" Grid.Row="0" Padding="-30,-5"
+                                               HeightRequest="240" WidthRequest="155" 
+                                               HorizontalOptions="Center" VerticalOptions="Center">
+                                            <Image  Source="{Binding image_url}" Margin="-5,-5"
+                                                    VerticalOptions="Center" HorizontalOptions="Center"                                                     
+                                                    HeightRequest="250" WidthRequest="250"/>
                                         </Frame>
 
                                         <Label Text="{Binding title}" FontSize="11" Grid.Row="1"

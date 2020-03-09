@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using Xamarin.Essentials;
 
 namespace Homework05.ViewModels
 {
@@ -14,11 +15,24 @@ namespace Homework05.ViewModels
         protected INavigationService NavigationService { get; private set; }
         protected IPageDialogService DialogService { get; private set; }
         public string Title { get; set; }
+        public bool IsNotConnected { get; set; }
 
         public ViewModelBase(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             NavigationService = navigationService;
             DialogService = pageDialogService;
+
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+            IsNotConnected = Connectivity.NetworkAccess != NetworkAccess.Internet;
+        }
+        ~ViewModelBase()
+        {
+            Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
+        }
+
+        void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            IsNotConnected = e.NetworkAccess != NetworkAccess.Internet;
         }
 
         public virtual void Initialize(INavigationParameters parameters)

@@ -18,12 +18,12 @@ namespace Homework05.Services
             _apiService = RestService.For<IApiService>(Config.urlApi);
         }
 
-        public async Task<Animes> GetTopAnimes(int page)
+        public async Task<AnimeList> GetTopAnimes(int page)
         {
             return await _apiService.GetTopAnimes(page);
         }
 
-        public async Task<Animes> SearchAnime(string anime)
+        public async Task<AnimeList> SearchAnime(string anime)
         {
             return await _apiService.SearchAnime(anime);
         }

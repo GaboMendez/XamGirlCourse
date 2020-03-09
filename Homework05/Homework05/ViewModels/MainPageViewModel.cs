@@ -24,6 +24,7 @@ namespace Homework05.ViewModels
 
         // Commands
         public DelegateCommand AnimeCommand { get; set; }
+
         public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
             : base(navigationService, pageDialogService)
         {
@@ -35,8 +36,7 @@ namespace Homework05.ViewModels
 
         private async Task Anime()
         {
-            var CurrentConnection = Connectivity.NetworkAccess;
-            if (CurrentConnection.Equals(NetworkAccess.Internet))
+            if (!IsNotConnected)
             {
                 var loadingDialogConfiguration = new MaterialLoadingDialogConfiguration()
                 {
@@ -51,9 +51,9 @@ namespace Homework05.ViewModels
                                                                         configuration: loadingDialogConfiguration))
                 {
                     var ret = await ApiService.GetTopAnimes(1);
-                    List<Top> AnimeList = ret.top.Where(x => x.type.Equals("TV")).ToList();
+                    List<Top> TopAnime = ret.top.Where(x => x.type.Equals("TV")).ToList();
 
-                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Anime}", UriKind.Relative), ("Animes", AnimeList));
+                    await NavigationService.NavigateAsync(new Uri($"/{Constants.Anime}", UriKind.Relative), ("AnimeList", TopAnime));
                 }
             }
             else

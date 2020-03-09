@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Homework05.Models
 {
-    public class Animes
+    public class AnimeList
     {
         public ObservableCollection<Top> top { get; set; }
         public ObservableCollection<Top> results { get; set; }

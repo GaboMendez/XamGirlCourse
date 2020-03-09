@@ -84,6 +84,9 @@
     <AndroidAsset Include="Assets\Poppins-Bold.ttf" />
     <AndroidAsset Include="Assets\Poppins-Regular.ttf" />
     <AndroidAsset Include="Assets\Poppins-SemiBold.ttf" />
+    <AndroidAsset Include="Assets\FontAwesome5Brands.otf" />
+    <AndroidAsset Include="Assets\FontAwesome5Regular.otf" />
+    <AndroidAsset Include="Assets\FontAwesome5Solid.otf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
