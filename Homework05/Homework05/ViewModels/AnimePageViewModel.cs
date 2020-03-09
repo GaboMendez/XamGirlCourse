@@ -19,29 +19,20 @@ namespace Homework05.ViewModels
     public class AnimePageViewModel : ViewModelBase
     {
         // Properties
-        protected IApiService ApiService { get; set; }
         protected int Page;
         public string SearchText { get; set; } = "";
+        protected IApiService ApiService { get; set; }
         public bool CancelBool { get; set; } = false;
+        public bool IsRefreshing { get; set; } = false;
+        public ObservableCollection<Top> ObservableAnimeList { get; set; }
 
-        private ObservableCollection<Top> _observableAnimeList;
-        public ObservableCollection<Top> ObservableAnimeList
-        {
-            get { return _observableAnimeList; }
-            set { _observableAnimeList = value; }
-        }
-
-        private bool _isRefreshing = false;
-        public bool IsRefreshing
-        {
-            get { return _isRefreshing; }
-            set { _isRefreshing = value; }
-        }
-        
         // Commands
         public DelegateCommand SearchCommand { get; set; }
         public DelegateCommand CancelCommand { get; set; }
         public DelegateCommand RefreshCommand { get; set; }
+        public DelegateCommand NextPageCommand { get; set; }
+        public DelegateCommand BackPageCommand { get; set; }
+
         public AnimePageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
@@ -52,19 +43,65 @@ namespace Homework05.ViewModels
             RefreshCommand = new DelegateCommand(async () => { await Refresh(); });
             SearchCommand = new DelegateCommand(async () => { await Search(); });
             CancelCommand = new DelegateCommand(async () => { await Cancel(); });
+            NextPageCommand = new DelegateCommand(async () => { await NextPage(); });
+            BackPageCommand = new DelegateCommand(async () => { await BackPage(); });
+
+        }
+
+        private async Task BackPage()
+        {
+            if (Page.Equals(1))
+                return;
+            
+            var loadingDialogConfiguration = new MaterialLoadingDialogConfiguration()
+            {
+                BackgroundColor = Color.FromHex("#011a27"),
+                MessageTextColor = Color.White.MultiplyAlpha(0.8),
+                TintColor = Color.White,
+                CornerRadius = 8,
+                ScrimColor = Color.FromHex("#232F34").MultiplyAlpha(0.32)
+            };
+
+            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Loading Animes...",
+                                                                    configuration: loadingDialogConfiguration))
+            {
+                var ret = await ApiService.GetTopAnimes(Interlocked.Decrement(ref Page));
+                List<Top> AnimeList = ret.top.Where(x => x.type.Equals("TV")).ToList();
+                ObservableAnimeList = ToObservable(AnimeList);              
+            }
+        }
+
+        private async Task NextPage()
+        {
+            var loadingDialogConfiguration = new MaterialLoadingDialogConfiguration()
+            {
+                BackgroundColor = Color.FromHex("#011a27"),
+                MessageTextColor = Color.White.MultiplyAlpha(0.8),
+                TintColor = Color.White,
+                CornerRadius = 8,
+                ScrimColor = Color.FromHex("#232F34").MultiplyAlpha(0.32)
+            };
+
+            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Loading Animes...",
+                                                                    configuration: loadingDialogConfiguration))
+            {
+                var ret = await ApiService.GetTopAnimes(Interlocked.Increment(ref Page));
+                List<Top> AnimeList = ret.top.Where(x => x.type.Equals("TV")).ToList();
+                ObservableAnimeList = ToObservable(AnimeList);
+            }
         }
 
         private async Task Refresh()
         {
             IsRefreshing = true;
-
+            SearchText = "";
             if (CancelBool)
                 CancelBool = !CancelBool;
-            SearchText = "";
+         
+
             var ret = await ApiService.GetTopAnimes(Interlocked.Increment(ref Page));           
             List<Top> AnimeList = ret.top.Where(x => x.type.Equals("TV")).ToList();
-            ObservableAnimeList = ToObservable(AnimeList);
-
+            ObservableAnimeList = ToObservable(AnimeList);            
             IsRefreshing = false;
         }
 
@@ -118,18 +155,16 @@ namespace Homework05.ViewModels
                     {
                         List<Top> AnimeList = ret.results.Where(x => x.type.Equals("TV")).ToList();
                         ObservableAnimeList = ToObservable(AnimeList);
-                        CancelBool = true;
                     }
                     else
-                    {
                         ObservableAnimeList = new ObservableCollection<Top>();
-                        CancelBool = true;
-                    }
+                    
+                    CancelBool = true;
                 }
-                
 
             }
         }
+
         private ObservableCollection<Top> ToObservable(List<Top> enumerable)
         {
             var ret = new ObservableCollection<Top>();
@@ -139,6 +174,7 @@ namespace Homework05.ViewModels
             }
             return ret;
         }
+
         public override void Initialize(INavigationParameters parameters)
         {
             base.Initialize(parameters);
