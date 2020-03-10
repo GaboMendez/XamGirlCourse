@@ -76,7 +76,7 @@ namespace Homework05.ViewModels
                 using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Loading Anime...",
                                                                         configuration: loadingDialogConfiguration))
                 {
-                    var anime = await ApiService.SearchAnimeID(selectedAnime.mal_id);
+                    Anime anime = await ApiService.SearchAnimeID(selectedAnime.mal_id);
                     await NavigationService.NavigateAsync(new Uri($"/{Constants.AnimeDetail}", UriKind.Relative), ("Anime", anime));
                 }
             }
