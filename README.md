@@ -1,20 +1,28 @@
-# XamGirl Course
-This repository contains all the practices of the XamGirl course with Charlin Agramonte. 
-* **Blog:** https://xamgirl.com/blog/
+# Homework 05
 
-Every assignment is a branch from ```master``` of ***(XamGirlCourse Repository)***
+* Use an API in your selection, request an API and display the information in the view.
+ 
+* The app must validate that there is an internet connection before making the request, if there is no internet connection it should show an error message.
+ 
+## API Used
+-[Jikan API](https://jikan.moe/)
+* Jikan is an open-source PHP & REST API for the “most active online anime + manga community and database” — MyAnimeList. It parses the website to satisfy the need for an API.
 
-### - Homework Extra 01 - Replicate Design:
-https://tinyurl.com/qretrwj
+-**EndPoints Used**
+* https://api.jikan.moe/v3/top/anime/{page_number}: This endpoint is used for getting the top items on MyAnimeList of an indicated page.
 
-### - Homework 01 - Login & Signup Page:
-https://tinyurl.com/thws9vs
+* https://api.jikan.moe/v3/search/anime?q={anime_name}: This endpoint is used for getting the result for the searched anime. *NOTE: MyAnimeList only processes queries with a minimum of 3 letters.*
 
-### - Homework 02 - Login & Signup Page & Discovery Page:
-https://tinyurl.com/qvdodzh
+* https://api.jikan.moe//v3/anime/{anime_id}: This endpoint is used for getting a single anime object with all its details with the anime ID.
 
-### - Homework 03 - User Authentication & App Resources:
-https://tinyurl.com/w5j6wez
+-[API Documentation](https://jikan.docs.apiary.io/#)
 
-### - Homework 04 - User Authentication & Contact Agenda:
-https://tinyurl.com/ulaedkz
+## Screenshots
+<p aling="center">
+<img src="/ScreenShots/Screen01.jpg" width="30%" /> <img src="/ScreenShots/Screen02.jpg" width="30%" /> 
+</p>
+<p aling="center">
+<img src="/ScreenShots/Screen03.jpg" width="30%" /> <img src="/ScreenShots/Screen04.jpg" width="30%" />  
+</p>
+ 
+ #### Made by: *Gabriel Mendez Reyes*
