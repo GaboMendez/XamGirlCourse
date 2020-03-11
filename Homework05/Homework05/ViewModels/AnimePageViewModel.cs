@@ -24,6 +24,7 @@ namespace Homework05.ViewModels
         public string SearchText { get; set; } = "";
         public bool CancelBool { get; set; } = false;
         public bool IsRefreshing { get; set; } = false;
+
         private Top _selectedAnime;
         public Top SelectedAnime
         {
@@ -77,6 +78,7 @@ namespace Homework05.ViewModels
                                                                         configuration: loadingDialogConfiguration))
                 {
                     Anime anime = await ApiService.SearchAnimeID(selectedAnime.mal_id);
+                   
                     await NavigationService.NavigateAsync(new Uri($"/{Constants.AnimeDetail}", UriKind.Relative), ("Anime", anime));
                 }
             }
@@ -176,7 +178,7 @@ namespace Homework05.ViewModels
                 using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Loading Animes...",
                                                                         configuration: loadingDialogConfiguration))
                 {
-                    var ret = await ApiService.GetTopAnimes(Interlocked.Increment(ref Page));
+                    var ret = await ApiService.GetTopAnimes(Page);
                     List<Top> AnimeList = ret.top.Where(x => x.type.Equals("TV")).ToList();
                     ObservableAnime = ToObservable(AnimeList);
                 }

@@ -12,7 +12,7 @@ namespace Homework05.Models
         public string trailer_url { get; set; }
         public string title { get; set; }
         public string type { get; set; }
-        public int episodes { get; set; }
+        public int? episodes { get; set; }
         public string status { get; set; }
         public string rating { get; set; }
         public double score { get; set; }
