@@ -22,17 +22,78 @@ namespace Homework05.ViewModels
         public string Sypnosis { get; set; } = "";
         public string MoreSypnosis { get; set; } = "...";
         public bool TrailerBool { get; set; } = false;
+        public bool InfoBool { get; set; } = false;
         public bool SummaryBool { get; set; } = false;
 
         // Commands
         public DelegateCommand TrailerCommand { get; set; }
         public DelegateCommand MoreCommand { get; set; }
+        public DelegateCommand OpeningCommand { get; set; }
+        public DelegateCommand EndingCommand { get; set; }
+        public DelegateCommand InfoCommand { get; set; }
 
         public AnimeDetailPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
             TrailerCommand = new DelegateCommand(async () => { await Trailer(); });
             MoreCommand = new DelegateCommand(async () => { await More(); });
+            OpeningCommand = new DelegateCommand(async () => { await Opening(); });
+            EndingCommand = new DelegateCommand(async () => { await Ending(); });
+            InfoCommand = new DelegateCommand(async () => { await Info(); });
+        }
+
+        private async Task Ending()
+        {
+            var alertDialogConfiguration = new MaterialAlertDialogConfiguration
+            {
+                BackgroundColor = Color.FromHex("#011a27"),
+                TitleTextColor = Color.White,
+                MessageTextColor = Color.White.MultiplyAlpha(0.8),
+                TintColor = Color.White,
+                CornerRadius = 8,
+                Margin = new Thickness(5, 0, 5, 0),
+                ScrimColor = Color.FromHex("#232F34").MultiplyAlpha(0.32),
+                ButtonAllCaps = false,
+            };
+            
+            string message = "";
+            int number = 1;   
+            
+            foreach (var item in Anime.ending_themes)
+                if(number < 9) 
+                    message += $"{number++}) {item} \n";
+
+            await MaterialDialog.Instance.AlertAsync(message: message,
+                                                     title: "Endings List",
+                                                     acknowledgementText: "Got It",
+                                                     configuration: alertDialogConfiguration);
+        }
+
+        private async Task Opening()
+        {
+            var alertDialogConfiguration = new MaterialAlertDialogConfiguration
+            {
+                BackgroundColor = Color.FromHex("#011a27"),
+                TitleTextColor = Color.White,
+                MessageTextColor = Color.White.MultiplyAlpha(0.8),
+                TintColor = Color.White,
+                CornerRadius = 8,
+                Margin = new Thickness(5, 0, 5, 0),
+                ScrimColor = Color.FromHex("#232F34").MultiplyAlpha(0.32),
+                ButtonAllCaps = false,
+            };
+
+            string message = "";
+            int number = 1;
+
+            foreach (var item in Anime.opening_themes)
+                if (number < 9)
+                    message += $"{number++}) {item} \n";
+
+            await MaterialDialog.Instance.AlertAsync(message: message,
+                                                     title: "Openings List",
+                                                     acknowledgementText: "Got It",
+                                                     configuration: alertDialogConfiguration);
         }
 
         private async Task More()
@@ -54,6 +115,19 @@ namespace Homework05.ViewModels
                                                      acknowledgementText: "Got It",
                                                      configuration: alertDialogConfiguration);
         }
+        
+        private async Task Info()
+        {
+            try
+            {
+                await Browser.OpenAsync(new Uri(Anime.url), BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                await DialogService.DisplayAlertAsync("Device does not support browser navigation!", null, "Ok");
+            }
+        }
 
         private async Task Trailer()
         {
@@ -74,7 +148,6 @@ namespace Homework05.ViewModels
             if (parameters.ContainsKey("Anime"))
             {
                 Anime = (Anime)parameters["Anime"];
-
                 var summary = Anime.synopsis.Split('.');
 
                 for (int i = 0; i < summary.Length - 1; i++)
@@ -95,6 +168,10 @@ namespace Homework05.ViewModels
 
                 if (Anime.trailer_url != null)
                     TrailerBool = true;
+
+                if (Anime.url != null)
+                    InfoBool = true;
+
             }
         }
     }

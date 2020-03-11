@@ -14,8 +14,14 @@
                 <RowDefinition Height="4*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*" />
+                <ColumnDefinition Width="2.5*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="0" BackgroundColor="{x:DynamicResource Primary}">
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+                  BackgroundColor="{x:DynamicResource Primary}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*" />
                     <ColumnDefinition Width="6*" />
@@ -45,7 +51,7 @@
                         Grid.Column="0" Grid.Row="1" Margin="20,0,0,0" FontSize="17" TextColor="White"
                         HorizontalTextAlignment="Start"  VerticalTextAlignment="End" 
                         Style="{StaticResource LabelStyle}" FontFamily="{StaticResource PoppinsBoldFont}"/>
-                
+
                 <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Start" Margin="5,0,0,0">
                     <Label  Text="{Binding Anime.rating, StringFormat='Rating: \&#10;     {0:F0}'}" 
                             FontSize="16" TextColor="White" HorizontalTextAlignment="Start"  
@@ -62,51 +68,46 @@
                 </StackLayout>
 
                 <material:MaterialButton    Grid.Column="1" Grid.Row="1" BackgroundColor="#EAEAEA" 
-                                            HorizontalOptions="End" VerticalOptions="Start"
+                                            HorizontalOptions="End"  Margin="10,0" 
                                             Command="{Binding TrailerCommand}" IsVisible="{Binding TrailerBool}"
                                             Text="Watch Trailer" TextColor="Black" 
-                                            FontAttributes="Bold" FontSize="16" Margin="10,0" />
+                                            FontAttributes="Bold" FontSize="17"/>
             </Grid>
 
-            <StackLayout Grid.Row="1" VerticalOptions="Center" Margin="5,-5,0,0" >
-                
-                <Label  Text="Synopsis" FontSize="20" Style="{StaticResource LabelStyle}" 
-                        TextColor="{x:DynamicResource Primary}" FontFamily="{StaticResource PoppinsBoldFont}"
-                        HorizontalTextAlignment="Start" Margin="0,0,0,-10" />
+            <Label  Text="Synopsis" FontSize="20" Style="{StaticResource LabelStyle}" 
+                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="5,-5,0,-10"
+                    TextColor="{x:DynamicResource Primary}" FontFamily="{StaticResource PoppinsBoldFont}"
+                    HorizontalTextAlignment="Start" VerticalOptions="Start" />
 
-                <Label  Text="{Binding Sypnosis}" FontSize="14.5" FontAttributes="Bold"
-                        HorizontalTextAlignment="Start" FontFamily="{StaticResource PoppinsBoldFont}"
-                        TextColor="{x:DynamicResource DarkGray}" Style="{StaticResource LabelStyle}" />               
-                
-            </StackLayout>
+            <Label  Text="{Binding Sypnosis}" FontSize="14.5" Style="{StaticResource LabelStyle}"
+                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="5,-5,0,-10"
+                    FontFamily="{StaticResource PoppinsBoldFont}" TextColor="{x:DynamicResource DarkGray}"  
+                    HorizontalTextAlignment="Start" VerticalOptions="Center" />
 
-            <Label  Text="Read More" Style="{StaticResource LabelStyle}" FontFamily="{StaticResource PoppinsBoldFont}" 
+            <Label  Text="Read More" Grid.Row="1" Grid.Column="0" 
+                    Style="{StaticResource LabelStyle}" FontFamily="{StaticResource PoppinsBoldFont}" 
                     TextColor="{x:DynamicResource Primary}" IsVisible="{Binding SummaryBool}" 
-                    Grid.Row="1" Margin="0,20,10,-20" FontSize="16" TextDecorations="Underline"
-                    HorizontalTextAlignment="End"  VerticalTextAlignment="End">
+                    FontSize="16" TextDecorations="Underline" Margin="5,10,-5,-10"
+                    HorizontalTextAlignment="Start"  VerticalTextAlignment="End">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding MoreCommand}"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
-            
-            <StackLayout Grid.Row="2" Orientation="Horizontal" 
-                         HorizontalOptions="Center">
 
-                <!--<material:MaterialButton    BackgroundColor="#EAEAEA" 
-                                            Text="Openings &#x25B6;" TextColor="Black" 
-                                            Command="{Binding TrailerCommand}" Margin="0,0" 
-                                            FontAttributes="Bold" FontSize="16" />
+            <material:MaterialButton Grid.Row="2" Grid.Column="0" Text="Openings" Margin="0,5"
+                                     Command="{Binding OpeningCommand}" FontSize="14"
+                                     BackgroundColor="{DynamicResource Primary}" ButtonType="Flat"
+                                     TextColor="{StaticResource White}" BorderColor="{StaticResource DarkGray}" />
 
-                <material:MaterialButton    BackgroundColor="#EAEAEA" HorizontalOptions="Center"
-                                            Text="Endings &#x25B6;" TextColor="Black" 
-                                            Command="{Binding TrailerCommand}" Margin="0,0" 
-                                            FontAttributes="Bold" FontSize="16" />
+            <material:MaterialButton Grid.Row="2" Grid.Column="1" Text="Endings" Margin="0,5"
+                                     Command="{Binding EndingCommand}" FontSize="14"
+                                     BackgroundColor="{DynamicResource Primary}" ButtonType="Flat" 
+                                     TextColor="{StaticResource White}" BorderColor="{StaticResource DarkGray}" />
 
-                <material:MaterialButton    BackgroundColor="#EAEAEA" 
-                                            Command="{Binding TrailerCommand}" TextColor="Black" 
-                                            Text="More Info &#x25B6;" Margin="0,0"
-                                            FontAttributes="Bold" FontSize="16" />-->
-            </StackLayout>
+            <material:MaterialButton Grid.Row="2" Grid.Column="2" Text="More Info" Margin="0,5" 
+                                     Command="{Binding InfoCommand}" IsVisible="{Binding InfoBool}"
+                                     BackgroundColor="#EAEAEA" FontSize="16" Elevation="1"
+                                     TextColor="Black" BorderColor="{StaticResource DarkGray}" />
             
         </Grid>
 
