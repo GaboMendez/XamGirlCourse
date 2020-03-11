@@ -15,7 +15,7 @@
 
 * https://api.jikan.moe//v3/anime/{anime_id}: This endpoint is used for getting a single anime object with all its details with the anime ID.
 
--[API Documentation](https://jikan.docs.apiary.io/#)
+-[Documentation API](https://jikan.docs.apiary.io/#)
 
 ## Screenshots
 <p aling="center">
