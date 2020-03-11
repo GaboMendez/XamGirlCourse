@@ -4,6 +4,9 @@
  
 * The app must validate that there is an internet connection before making the request, if there is no internet connection it should show an error message.
  
+### EXTRA
+* Use the [Refit](https://github.com/reactiveui/refit) library to make requests
+
 ## API Used
 -[Jikan API](https://jikan.moe/)
 * Jikan is an open-source PHP & REST API for the “most active online anime + manga community and database” — MyAnimeList. It parses the website to satisfy the need for an API.
