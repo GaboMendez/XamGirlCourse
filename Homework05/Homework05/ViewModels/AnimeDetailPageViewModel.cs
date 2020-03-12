@@ -60,7 +60,7 @@ namespace Homework05.ViewModels
             int number = 1;   
             
             foreach (var item in Anime.ending_themes)
-                if(number < 9) 
+                if(number < 6) 
                     message += $"{number++}) {item} \n";
 
             await MaterialDialog.Instance.AlertAsync(message: message,
@@ -87,7 +87,7 @@ namespace Homework05.ViewModels
             int number = 1;
 
             foreach (var item in Anime.opening_themes)
-                if (number < 9)
+                if (number < 6)
                     message += $"{number++}) {item} \n";
 
             await MaterialDialog.Instance.AlertAsync(message: message,
